@@ -21,7 +21,6 @@ create table congdan(
     benh_ly CHAR ( 1) DEFAULT 'N' NOT NULL,
     ma_khu_vuc NUMBER  NOT NULL,
     CONSTRAINT fk_congdan_khuvuc
-
         FOREIGN KEY( ma_khu_vuc )
         REFERENCES khuvuc ( ma_khu_vuc )
         ON DELETE CASCADE
@@ -30,7 +29,6 @@ create table congdan(
 create table cutri(
     cccd NUMBER PRIMARY KEY,
     CONSTRAINT fk_cutri_cccd
-
         FOREIGN KEY(cccd)
         REFERENCES congdan ( cccd)
         ON DELETE CASCADE
@@ -52,15 +50,12 @@ create table ungcuvien(
 
 create table nguoitheodoi(
     cccd NUMBER PRIMARY KEY,
-
     ma_khu_vuc NUMBER NOT NULL,
-
     CONSTRAINT fk_cccd_nguoitheodoi
         FOREIGN KEY(cccd)
         REFERENCES congdan ( cccd)
         ON DELETE CASCADE,
     CONSTRAINT fk_nguoitheodoi_khuvuc
-
         FOREIGN KEY( ma_khu_vuc )
         REFERENCES khuvuc ( ma_khu_vuc )
         ON DELETE CASCADE
@@ -69,7 +64,6 @@ create table nguoitheodoi(
 create table nguoigiamsat(
     cccd NUMBER PRIMARY KEY,
     ma_khu_vuc NUMBER DEFAULT 100 NOT NULL,
-
     CONSTRAINT fk_nguoigiamsat_cccd
         FOREIGN KEY(cccd)
         REFERENCES congdan ( cccd)
