@@ -245,153 +245,153 @@ insert into nguoilapcutri (cccd, ma_khu_vuc) values (100000908, 101);
 insert into nguoilapcutri (cccd, ma_khu_vuc) values (1000000017, 100);
 insert into nguoilapcutri (cccd, ma_khu_vuc) values (100004401, 102);
 insert into nguoilapcutri (cccd, ma_khu_vuc) values (100044401, 103);
--- quan 1
-insert into cutri (cccd)
-values (100000003);
-insert into cutri (cccd)
-values (100000001);
-insert into cutri (cccd)
-values (100000007);
-insert into cutri (cccd)
-values (100000008);
-insert into cutri (cccd)
-values (100000009);
-insert into cutri (cccd)
-values (1000000011);
-insert into cutri (cccd)
-values (1000000012);
-insert into cutri (cccd)
-values (1000000013);
-insert into cutri (cccd)
-values (1000000014);
-insert into cutri (cccd)
-values (1000000015);
-insert into cutri (cccd)
-values (1000000016);
-insert into cutri (cccd)
-values (1000000018);
-insert into cutri (cccd)
-values (1000000019);
+-- -- quan 1
+-- insert into cutri (cccd)
+-- values (100000003);
+-- insert into cutri (cccd)
+-- values (100000001);
+-- insert into cutri (cccd)
+-- values (100000007);
+-- insert into cutri (cccd)
+-- values (100000008);
+-- insert into cutri (cccd)
+-- values (100000009);
+-- insert into cutri (cccd)
+-- values (1000000011);
+-- insert into cutri (cccd)
+-- values (1000000012);
+-- insert into cutri (cccd)
+-- values (1000000013);
+-- insert into cutri (cccd)
+-- values (1000000014);
+-- insert into cutri (cccd)
+-- values (1000000015);
+-- insert into cutri (cccd)
+-- values (1000000016);
+-- insert into cutri (cccd)
+-- values (1000000018);
+-- insert into cutri (cccd)
+-- values (1000000019);
 
--- quan 2
-insert into cutri (cccd)
-values (100000504);
-insert into cutri (cccd)
-values (100000605);
-insert into cutri (cccd)
-values (100000706);
-insert into cutri (cccd)
-values (100001009);
-insert into cutri (cccd)
-values (100001110);
-insert into cutri (cccd)
-values (1000001211);
-insert into cutri (cccd)
-values (1000001312);
-insert into cutri (cccd)
-values (1000001413);
-insert into cutri (cccd)
-values (1000001514);
-insert into cutri (cccd)
-values (1000001615);
-insert into cutri (cccd)
-values (1000001716);
-insert into cutri (cccd)
-values (1000001817);
-insert into cutri(cccd)
-values (1000001918);
-insert into cutri (cccd)
-values (1000002019);
--- quan3
-insert into cutri (cccd)
-values (100001100);
-insert into cutri (cccd)
-values (100002202);
-insert into cutri (cccd)
-values (100003303);
-insert into cutri (cccd)
-values (100007706);
-insert into cutri (cccd)
-values (100008807);
-insert into cutri (cccd)
-values (100009908);
-insert into cutri (cccd)
-values (100111110);
-insert into cutri (cccd)
-values (1000121211);
-insert into cutri (cccd)
-values (1000131312);
-insert into cutri (cccd)
-values (1000141413);
-insert into cutri (cccd)
-values (1000151514);
-insert into cutri (cccd)
-values (1000161615);
-insert into cutri (cccd)
-values (1000171716);
-insert into cutri (cccd)
-values (1000181817);
-insert into cutri (cccd)
-values (1000191918);
-insert into cutri (cccd)
-values (1000202019);
--- quan4
-insert into cutri (cccd)
-values (100033303);
-insert into cutri (cccd)
-values (100055504);
-insert into cutri (cccd)
-values (100066605);
-insert into cutri (cccd)
-values (100088807);
-insert into cutri (cccd)
-values (100099908);
-insert into cutri (cccd)
-values (1012121211);
-insert into cutri (cccd)
-values (1013131312);
-insert into cutri (cccd)
-values (1014141413);
-insert into cutri (cccd)
-values (1015151514);
-insert into cutri (cccd)
-values (1016161615);
-insert into cutri (cccd)
-values (1017171716);
-insert into cutri (cccd)
-values (1018181817);
-insert into cutri (cccd)
-values (1019191918);
-insert into cutri (cccd)
-values (1020202019);
--- quan5
-insert into cutri (cccd)
-values (130033303);
-insert into cutri  (cccd)
-values (140044401);
-insert into cutri  (cccd)
-values (150055504);
-insert into cutri (cccd)
-values (160066605);
-insert into cutri(cccd)
-values (180088807);
-insert into cutri (cccd)
-values (190099908);
-insert into cutri (cccd)
-values (100101009);
-insert into cutri (cccd)
-values (1212121211);
-insert into cutri (cccd)
-values (1313131312);
-insert into cutri (cccd)
-values (1414141413);
-insert into cutri (cccd)
-values (1515151514);
-insert into cutri (cccd)
-values (1616161615);
-insert into cutri (cccd)
-values (1717171716);
-insert into cutri (cccd)
-values (1818181817);
-insert into cutri (cccd)
-values (1919191918);
+-- -- quan 2
+-- insert into cutri (cccd)
+-- values (100000504);
+-- insert into cutri (cccd)
+-- values (100000605);
+-- insert into cutri (cccd)
+-- values (100000706);
+-- insert into cutri (cccd)
+-- values (100001009);
+-- insert into cutri (cccd)
+-- values (100001110);
+-- insert into cutri (cccd)
+-- values (1000001211);
+-- insert into cutri (cccd)
+-- values (1000001312);
+-- insert into cutri (cccd)
+-- values (1000001413);
+-- insert into cutri (cccd)
+-- values (1000001514);
+-- insert into cutri (cccd)
+-- values (1000001615);
+-- insert into cutri (cccd)
+-- values (1000001716);
+-- insert into cutri (cccd)
+-- values (1000001817);
+-- insert into cutri(cccd)
+-- values (1000001918);
+-- insert into cutri (cccd)
+-- values (1000002019);
+-- -- quan3
+-- insert into cutri (cccd)
+-- values (100001100);
+-- insert into cutri (cccd)
+-- values (100002202);
+-- insert into cutri (cccd)
+-- values (100003303);
+-- insert into cutri (cccd)
+-- values (100007706);
+-- insert into cutri (cccd)
+-- values (100008807);
+-- insert into cutri (cccd)
+-- values (100009908);
+-- insert into cutri (cccd)
+-- values (100111110);
+-- insert into cutri (cccd)
+-- values (1000121211);
+-- insert into cutri (cccd)
+-- values (1000131312);
+-- insert into cutri (cccd)
+-- values (1000141413);
+-- insert into cutri (cccd)
+-- values (1000151514);
+-- insert into cutri (cccd)
+-- values (1000161615);
+-- insert into cutri (cccd)
+-- values (1000171716);
+-- insert into cutri (cccd)
+-- values (1000181817);
+-- insert into cutri (cccd)
+-- values (1000191918);
+-- insert into cutri (cccd)
+-- values (1000202019);
+-- -- quan4
+-- insert into cutri (cccd)
+-- values (100033303);
+-- insert into cutri (cccd)
+-- values (100055504);
+-- insert into cutri (cccd)
+-- values (100066605);
+-- insert into cutri (cccd)
+-- values (100088807);
+-- insert into cutri (cccd)
+-- values (100099908);
+-- insert into cutri (cccd)
+-- values (1012121211);
+-- insert into cutri (cccd)
+-- values (1013131312);
+-- insert into cutri (cccd)
+-- values (1014141413);
+-- insert into cutri (cccd)
+-- values (1015151514);
+-- insert into cutri (cccd)
+-- values (1016161615);
+-- insert into cutri (cccd)
+-- values (1017171716);
+-- insert into cutri (cccd)
+-- values (1018181817);
+-- insert into cutri (cccd)
+-- values (1019191918);
+-- insert into cutri (cccd)
+-- values (1020202019);
+-- -- quan5
+-- insert into cutri (cccd)
+-- values (130033303);
+-- insert into cutri  (cccd)
+-- values (140044401);
+-- insert into cutri  (cccd)
+-- values (150055504);
+-- insert into cutri (cccd)
+-- values (160066605);
+-- insert into cutri(cccd)
+-- values (180088807);
+-- insert into cutri (cccd)
+-- values (190099908);
+-- insert into cutri (cccd)
+-- values (100101009);
+-- insert into cutri (cccd)
+-- values (1212121211);
+-- insert into cutri (cccd)
+-- values (1313131312);
+-- insert into cutri (cccd)
+-- values (1414141413);
+-- insert into cutri (cccd)
+-- values (1515151514);
+-- insert into cutri (cccd)
+-- values (1616161615);
+-- insert into cutri (cccd)
+-- values (1717171716);
+-- insert into cutri (cccd)
+-- values (1818181817);
+-- insert into cutri (cccd)
+-- values (1919191918);
