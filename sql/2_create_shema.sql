@@ -20,7 +20,7 @@ create table congdan(
     tien_an CHAR ( 1) DEFAULT 'N' NOT NULL,
     benh_ly CHAR ( 1) DEFAULT 'N' NOT NULL,
     ma_khu_vuc NUMBER  NOT NULL,
-    mat_khau VARCHAR@ (10) DEFAULT '123456',
+    mat_khau VARCHAR2 (10) DEFAULT '123456',
     CONSTRAINT fk_congdan_khuvuc
         FOREIGN KEY( ma_khu_vuc )
         REFERENCES khuvuc ( ma_khu_vuc )
