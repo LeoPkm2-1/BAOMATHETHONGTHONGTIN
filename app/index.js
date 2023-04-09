@@ -3,12 +3,30 @@ const app = express();
 const path = require('path');
 const port = process.env.PORT ||3000;
 
+// app.use(express.urlencoded({extended: false}));
+
+// app.use(express.json());
+
+// app.use(express.static(path.join(__dirname,'/public')));
+
+const logger = (req,res,next)=>{
+    next();
+    const med = req.method;
+    const url = req.url;
+    const time = new Date().getFullYear()
+    console.log(med,url,time,'xin chao')
+
+}
+
+
 app.get('/',(req,res)=>{
-    res.send(__dirname);
+    res.sendFile(path.join(__dirname,'view','index.html'));
 });
 
+
+
 app.get('/*',(req,res)=>{
-    res.status(404).send('hihi');
+    res.status(408).send('hehe');
 });
 
 app.listen(port, ()=> {
