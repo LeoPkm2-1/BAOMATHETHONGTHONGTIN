@@ -15,11 +15,12 @@ create table congdan(
     sdt NUMBER,
     que_quan VARCHAR2 ( 50) NOT NULL,
     quoc_tich VARCHAR2 ( 50) NOT NULL,
-    thuong_tru VARCHAR2 ( 255) NOT NULL DEFAULT 'hanoi',
-    tam_tru VARCHAR2 ( 255) NOT NULL DEFAULT 'hanoi',
+    thuong_tru VARCHAR2 ( 255)  DEFAULT 'hanoi' NOT NULL,
+    tam_tru VARCHAR2 ( 255) DEFAULT 'hanoi' NOT NULL,
     tien_an CHAR ( 1) DEFAULT 'N' NOT NULL,
     benh_ly CHAR ( 1) DEFAULT 'N' NOT NULL,
     ma_khu_vuc NUMBER  NOT NULL,
+    mat_khau VARCHAR@ (10) DEFAULT '123456',
     CONSTRAINT fk_congdan_khuvuc
         FOREIGN KEY( ma_khu_vuc )
         REFERENCES khuvuc ( ma_khu_vuc )
@@ -108,11 +109,11 @@ create table lichsubau (
     cccd_cutri NUMBER NOT NULL,
     ma_ungcuvien NUMBER NOT NULL,
     thoi_gian DATE NOT NULL,
-        CONSTRAINT fk_cccd_cutri_bo_phieu
+    CONSTRAINT fk_lichsubau_cutri
         FOREIGN KEY(cccd_cutri)
         REFERENCES cutri ( cccd)
         ON DELETE CASCADE,
-    CONSTRAINT fk_ungcuvien_ma
+    CONSTRAINT fk_lichsubau_ungvien
         FOREIGN KEY( ma_ungcuvien )
         REFERENCES ungcuvien ( ma_ung_cu_vien)
         ON DELETE CASCADE,
