@@ -115,7 +115,7 @@ create table lichsubaucu (
     cccd_cutri NUMBER NOT NULL,
     ma_ungcuvien NUMBER NOT NULL,
     thoi_gian DATE NOT NULL,
-    loai_thao_tac VARCHAR2(20) NOT NULL;
+    loai_thao_tac VARCHAR2(20) NOT NULL,
     CONSTRAINT fk_lichsubaucu_cutri
         FOREIGN KEY(cccd_cutri)
         REFERENCES cutri ( cccd)
