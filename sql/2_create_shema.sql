@@ -20,7 +20,7 @@ create table congdan(
     tien_an CHAR ( 1) DEFAULT 'N' NOT NULL,
     benh_ly CHAR ( 1) DEFAULT 'N' NOT NULL,
     ma_khu_vuc NUMBER  NOT NULL,
-    mat_khau VARCHAR2 (10) DEFAULT '123456',
+    mat_khau VARCHAR2 (50) DEFAULT '123456',
     CONSTRAINT fk_congdan_khuvuc
         FOREIGN KEY( ma_khu_vuc )
         REFERENCES khuvuc ( ma_khu_vuc )
@@ -29,10 +29,16 @@ create table congdan(
 
 create table cutri(
     cccd NUMBER PRIMARY KEY,
-    CONSTRAINT fk_cutri_cccd
+    ma_nguoi_lap_cu_tri NUMBER NOT NULL,
+    thoi_gian DATE not null,
+    CONSTRAINT fk_cutri_congdan
         FOREIGN KEY(cccd)
         REFERENCES congdan ( cccd)
         ON DELETE CASCADE
+    CONSTRAINT fk_cutri_congdan
+        FOREIGN KEY(ma_nguoi_lap_cu_tri)
+        REFERENCES nguoilapcutri ( cccd)
+        ON DELETE CASCADE        
 );
 
 create table ungcuvien(
@@ -105,18 +111,35 @@ create table phieubau(
 );
 
 
-create table lichsubau (
+create table lichsubaucu (
     cccd_cutri NUMBER NOT NULL,
     ma_ungcuvien NUMBER NOT NULL,
     thoi_gian DATE NOT NULL,
-    CONSTRAINT fk_lichsubau_cutri
+    loai_thao_tac VARCHAR2(20) NOT NULL;
+    CONSTRAINT fk_lichsubaucu_cutri
         FOREIGN KEY(cccd_cutri)
         REFERENCES cutri ( cccd)
         ON DELETE CASCADE,
-    CONSTRAINT fk_lichsubau_ungvien
+    CONSTRAINT fk_lichsubaucu_ungvien
         FOREIGN KEY( ma_ungcuvien )
         REFERENCES ungcuvien ( ma_ung_cu_vien)
         ON DELETE CASCADE,
     PRIMARY KEY (cccd_cutri,ma_ungcuvien,thoi_gian)
 
 );
+
+create table lichsuchoncutri{
+    cccd_cong_dan NUMBER NOT NULL,
+    ma_nguoi_lap NUMBER NOT NULL,
+    thoi_gian DATE NOT NULL,
+    loai_thao_tac VARCHAR2(20) NOT NULL;
+    CONSTRAINT fk_lichsuchoncutri_congdan
+        FOREIGN key (cccd_cong_dan)
+        REFERENCES congdan(cccd)
+        on DELETE CASCADE,
+    CONSTRAINT fk_lichsuchoncutri_nguoilapcutri
+        FOREIGN key (ma_nguoi_lap)
+        REFERENCES nguoilapcutri(cccd)
+        on DELETE CASCADE,
+    primary key(cccd_cong_dan,ma_nguoi_lap,thoi_gian)
+}
