@@ -14,3 +14,5 @@ class AuthController {
         return argon2.verify(hash, password);
     }
 }
+
+exports.module = AuthController;
