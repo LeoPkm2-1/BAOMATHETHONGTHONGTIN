@@ -34,7 +34,7 @@ create table cutri(
     CONSTRAINT fk_cutri_congdan
         FOREIGN KEY(cccd)
         REFERENCES congdan ( cccd)
-        ON DELETE CASCADE
+        ON DELETE CASCADE,
     CONSTRAINT fk_cutri_congdan
         FOREIGN KEY(ma_nguoi_lap_cu_tri)
         REFERENCES nguoilapcutri ( cccd)
