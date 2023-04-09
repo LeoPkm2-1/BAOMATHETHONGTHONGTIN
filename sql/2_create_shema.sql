@@ -43,7 +43,7 @@ create table nguoilapcutri(
 create table cutri(
     cccd NUMBER PRIMARY KEY,
     ma_nguoi_lap_cu_tri NUMBER NOT NULL,
-    thoi_gian DATE not null,
+    thoi_gian TIMESTAMP  not null,
     CONSTRAINT fk_cutri_congdan
         FOREIGN KEY(cccd)
         REFERENCES congdan ( cccd)
@@ -101,7 +101,7 @@ create table phieubau(
     ma_phieu NUMBER PRIMARY KEY,
     cccd_cutri NUMBER NOT NULL,
     ma_ungcuvien NUMBER NOT NULL,
-    thoi_gian DATE NOT NULL,
+    thoi_gian TIMESTAMP  NOT NULL,
     CONSTRAINT fk_cccd_cutri_bo_phieu
         FOREIGN KEY(cccd_cutri)
         REFERENCES cutri ( cccd)
@@ -116,7 +116,7 @@ create table phieubau(
 create table lichsubaucu (
     cccd_cutri NUMBER NOT NULL,
     ma_ungcuvien NUMBER NOT NULL,
-    thoi_gian DATE NOT NULL,
+    thoi_gian TIMESTAMP  NOT NULL,
     loai_thao_tac VARCHAR2(20) NOT NULL,
     CONSTRAINT fk_lichsubaucu_cutri
         FOREIGN KEY(cccd_cutri)
@@ -133,7 +133,7 @@ create table lichsubaucu (
 create table lichsuchoncutri(
     cccd_cong_dan NUMBER NOT NULL,
     ma_nguoi_lap NUMBER NOT NULL,
-    thoi_gian DATE NOT NULL,
+    thoi_gian TIMESTAMP  NOT NULL,
     loai_thao_tac VARCHAR2(20) NOT NULL,
     CONSTRAINT fk_lschoncutri_cd
         FOREIGN key (cccd_cong_dan)

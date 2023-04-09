@@ -1,1 +1,6 @@
 -- thêm cử tri
+-- CREATE OR REPLACE PROCEDURE pro_them_cu_tri (
+--     in_cccd_cu_tri NUMBER,
+--     in_ma_nguoi_lap_cu_tri NUMBER,
+--     in_thoi_gian_them TIMESTAMP  DEFAULT 
+-- )
