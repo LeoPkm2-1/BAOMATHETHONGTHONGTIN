@@ -1,10 +1,17 @@
+.centerScreen {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .loginBody {
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #eeeeee;
-    max-width: 400px;
+    padding: 20px;
+    max-width: 500px;
 }
 
 .fieldInput {

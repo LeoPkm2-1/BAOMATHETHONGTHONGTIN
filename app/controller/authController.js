@@ -1,4 +1,4 @@
-import argon2, { argon2id } from 'argon2';
+import argon2 from 'argon2';
 
 class AuthController {
     static async hashPassword(password) {
