@@ -302,3 +302,96 @@ insert into cutri(cccd)
 values (1000001918);
 insert into cutri (cccd)
 values (1000002019);
+-- quan3
+insert into cutri (cccd)
+values (100001100);
+insert into cutri (cccd)
+values (100002202);
+insert into cutri (cccd)
+values (100003303);
+insert into cutri (cccd)
+values (100007706);
+insert into cutri (cccd)
+values (100008807);
+insert into cutri (cccd)
+values (100009908);
+insert into cutri (cccd)
+values (100111110);
+insert into cutri (cccd)
+values (1000121211);
+insert into cutri (cccd)
+values (1000131312);
+insert into cutri (cccd)
+values (1000141413);
+insert into cutri (cccd)
+values (1000151514);
+insert into cutri (cccd)
+values (1000161615);
+insert into cutri (cccd)
+values (1000171716);
+insert into cutri (cccd)
+values (1000181817);
+insert into cutri (cccd)
+values (1000191918);
+insert into cutri (cccd)
+values (1000202019);
+-- quan4
+insert into cutri (cccd)
+values (100033303);
+insert into cutri (cccd)
+values (100055504);
+insert into cutri (cccd)
+values (100066605);
+insert into cutri (cccd)
+values (100088807);
+insert into cutri (cccd)
+values (100099908);
+insert into cutri (cccd)
+values (1012121211);
+insert into cutri (cccd)
+values (1013131312);
+insert into cutri (cccd)
+values (1014141413);
+insert into cutri (cccd)
+values (1015151514);
+insert into cutri (cccd)
+values (1016161615);
+insert into cutri (cccd)
+values (1017171716);
+insert into cutri (cccd)
+values (1018181817);
+insert into cutri (cccd)
+values (1019191918);
+insert into cutri (cccd)
+values (1020202019);
+-- quan5
+insert into cutri (cccd)
+values (130033303);
+insert into cutri  (cccd)
+values (140044401);
+insert into cutri  (cccd)
+values (150055504);
+insert into cutri (cccd)
+values (160066605);
+insert into cutri(cccd)
+values (180088807);
+insert into cutri (cccd)
+values (190099908);
+insert into cutri (cccd)
+values (100101009);
+insert into cutri (cccd)
+values (1212121211);
+insert into cutri (cccd)
+values (1313131312);
+insert into cutri (cccd)
+values (1414141413);
+insert into cutri (cccd)
+values (1515151514);
+insert into cutri (cccd)
+values (1616161615);
+insert into cutri (cccd)
+values (1717171716);
+insert into cutri (cccd)
+values (1818181817);
+insert into cutri (cccd)
+values (1919191918);
