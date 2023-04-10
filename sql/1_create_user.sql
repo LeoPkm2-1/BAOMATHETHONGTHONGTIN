@@ -7,7 +7,7 @@ create user elec
 GRANT CONNECT TO elec;
 GRANT CREATE SESSION to elec;
 grant create table to elec;
-grant create view, create procedure, create sequence to elec;
+grant create view, create procedure, create TRIGGER,create sequence to elec;
 
 
 -- -- người dùng quản lý việc cấp nhẫn cho user khác
