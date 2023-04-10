@@ -1,3 +1,6 @@
+-- kết nối với hệ quản trị cơ sở dữ liệu
+conn elec/elec;
+
 -- khuvuc
 insert into khuvuc (ma_khu_vuc, ten_khu_vuc) values (100, 'Quan 1');
 insert into khuvuc (ma_khu_vuc, ten_khu_vuc) values (101, 'Quan 2');
