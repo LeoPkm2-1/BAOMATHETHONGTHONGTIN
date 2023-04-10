@@ -12,6 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "argon2": "^0.30.3",
+    "cors": "^2.8.5",
+>>>>>>> 465312e2def94c5195822cc40d915c34b9fe2d32
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "oracledb": "^5.5.0"
