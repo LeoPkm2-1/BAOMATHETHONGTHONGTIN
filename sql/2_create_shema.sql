@@ -153,5 +153,5 @@ create table trangthaicutri(
     CONSTRAINT fk_trangthaict_ct
         FOREIGN KEY(cccd)
         REFERENCES cutri (cccd)
-        on DELETE CASCADE,
-)
+        on DELETE CASCADE
+);
