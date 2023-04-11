@@ -140,7 +140,7 @@ BEGIN
     from elec.congdan  
     where cccd = :new.cccd;
 
-    if l_khuvuc != :new.ma_khu_vuc THEN
+    if l_khuvuc = :new.ma_khu_vuc THEN
         raise_application_error(-20022, 'nguoi giam sat bat buoc giam sat khu vuc khac khu vuc minh dang song');
     end if;
 
@@ -167,7 +167,7 @@ BEGIN
     from elec.congdan  
     where cccd = :new.cccd;
 
-    if l_khuvuc != :new.ma_khu_vuc THEN
+    if l_khuvuc = :new.ma_khu_vuc THEN
         raise_application_error(-20023, 'nguoi theo doi bat buoc giam sat khu vuc khac khu vuc minh dang song');
     end if;
 
