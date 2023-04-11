@@ -7,6 +7,7 @@ const routes = require('./router');
 const oracledb = require('oracledb');
 
 app.use(express.static('public'));
+app.use(express.static('view'));
 
 // jump to router.
 app.use('/',routes)
