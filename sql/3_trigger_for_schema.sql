@@ -30,15 +30,6 @@ BEGIN
 end;
 
 
--- CREATE TRIGGER AutoFillVoteHistory
---     AFTER INSERT ON phieubau
---     FOR EACH ROW
--- DECLARE
-    
--- BEGIN
---     INSERT INTO lichsubau (cccd_cutri, ma_ungcuvien, thoi_gian)
---         VALUES (:new.cccd_cutri, :new.ma_ungcuvien, :new.thoi_gian);
--- END;
 -- nguoi giam sat giam sat khu vuc minh o
 create  OR REPLACE TRIGGER rangbuocvenggiamsat
     before INSERT 
@@ -67,6 +58,10 @@ BEGIN
         when NO_DATA_FOUND then
             raise NO_DATA_FOUND;
 end;
+
+
+
+
 -- nguoi lap cu tri lap cu tri cho khu vuc minh o
 create  OR REPLACE TRIGGER rangbuocvenguoilapcutri
     before INSERT 
@@ -95,6 +90,9 @@ BEGIN
         when NO_DATA_FOUND then
             raise NO_DATA_FOUND;
 end;
+
+
+
 -- khi update nguoi lap cu tri khu vuc lap cu tri phai la noi dang sinh song cua nguoi lap cu tri
 create or replace trigger rangbuocupdatenguoilapcutri
     before UPDATE
@@ -122,6 +120,10 @@ BEGIN
         when NO_DATA_FOUND then
             raise NO_DATA_FOUND; 
 END;
+
+
+
+
 -- update nguoi giam sat bat buoc giam sat khu vuc khac khu vuc minh dang song  
 create or replace trigger rangbuocupdatenguoigiamsat
     before UPDATE
@@ -140,7 +142,7 @@ BEGIN
     from elec.congdan  
     where cccd = :new.cccd;
 
-    if l_khuvuc != :new.ma_khu_vuc THEN
+    if l_khuvuc = :new.ma_khu_vuc THEN
         raise_application_error(-20022, 'nguoi giam sat bat buoc giam sat khu vuc khac khu vuc minh dang song');
     end if;
 
@@ -149,6 +151,10 @@ BEGIN
         when NO_DATA_FOUND then
             raise NO_DATA_FOUND; 
 END;
+
+
+
+
 -- update nguoi theo doi bat thuoc theo doi khu vuc khac khu vuc minh dang song     
 create or replace trigger rangbuocupdatenguoitheodoi
     before UPDATE
@@ -167,7 +173,7 @@ BEGIN
     from elec.congdan  
     where cccd = :new.cccd;
 
-    if l_khuvuc != :new.ma_khu_vuc THEN
+    if l_khuvuc = :new.ma_khu_vuc THEN
         raise_application_error(-20023, 'nguoi theo doi bat buoc giam sat khu vuc khac khu vuc minh dang song');
     end if;
 
