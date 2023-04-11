@@ -154,4 +154,4 @@ create table trangthaicutri(
         FOREIGN KEY(cccd)
         REFERENCES cutri (cccd)
         on DELETE CASCADE
-)
+);
