@@ -58,6 +58,7 @@ create table ungcuvien(
     cccd NUMBER NOT NULL,
     ma_ung_cu_vien NUMBER PRIMARY KEY,
     ma_khu_vuc NUMBER NOT NULL,
+    so_phieu NUMBER DEFAULT 0 NOT NULL,
     CONSTRAINT fk_ungcuvien_cccd
         FOREIGN KEY(cccd)
         REFERENCES congdan ( cccd)
@@ -145,3 +146,12 @@ create table lichsuchoncutri(
         on DELETE CASCADE,
     primary key(cccd_cong_dan,ma_nguoi_lap,thoi_gian)
 );
+
+create table trangthaicutri(
+    cccd NUMBER NOT NULL,
+    da_bau CHAR ( 1) DEFAULT 'N' NOT NULL,
+    CONSTRAINT fk_trangthaict_ct
+        FOREIGN KEY(cccd)
+        REFERENCES cutri (cccd)
+        on DELETE CASCADE,
+)
