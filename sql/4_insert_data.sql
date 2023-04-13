@@ -226,28 +226,38 @@ insert into ungcuvien (cccd, ma_ung_cu_vien, ma_khu_vuc) values (1014141413, 400
 insert into ungcuvien (cccd, ma_ung_cu_vien, ma_khu_vuc) values (170077706, 5001, 104);
 insert into ungcuvien (cccd, ma_ung_cu_vien, ma_khu_vuc) values (211111110, 5002, 104);
 
-insert into nguoitheodoi (cccd, ma_khu_vuc) values (100000005, 100);
-insert into nguoitheodoi (cccd, ma_khu_vuc) values (100000006, 100);
-insert into nguoitheodoi (cccd, ma_khu_vuc) values (100000303, 101);
-insert into nguoitheodoi (cccd, ma_khu_vuc) values (100000401, 101);
-insert into nguoitheodoi (cccd, ma_khu_vuc) values (100005504, 102);
-insert into nguoitheodoi (cccd, ma_khu_vuc) values (100106605, 102);
-insert into nguoitheodoi (cccd, ma_khu_vuc) values (100011100, 103);
-insert into nguoitheodoi (cccd, ma_khu_vuc) values (100022202, 103);
-insert into nguoitheodoi (cccd, ma_khu_vuc) values (110011100, 104);
-insert into nguoitheodoi (cccd, ma_khu_vuc) values (120022202, 104);
+insert into nguoitheodoi (cccd, ma_khu_vuc) values (2020202019, 100);
+insert into nguoitheodoi (cccd, ma_khu_vuc) values (1020202019, 100);
+insert into nguoitheodoi (cccd, ma_khu_vuc) values (1000202019, 101);
+insert into nguoitheodoi (cccd, ma_khu_vuc) values (1000000019, 101);
+insert into nguoitheodoi (cccd, ma_khu_vuc) values (1000002019, 102);
+insert into nguoitheodoi (cccd, ma_khu_vuc) values (1919191918, 102);
+insert into nguoitheodoi (cccd, ma_khu_vuc) values (1818181817, 103);
+insert into nguoitheodoi (cccd, ma_khu_vuc) values (1000000012, 103);
+insert into nguoitheodoi (cccd, ma_khu_vuc) values (1000000015, 104);
+insert into nguoitheodoi (cccd, ma_khu_vuc) values (1000000016, 104);
 
-insert into nguoigiamsat (cccd, ma_khu_vuc) values (100000004, 104);
-insert into nguoigiamsat (cccd, ma_khu_vuc) values (100000807, 101);
-insert into nguoigiamsat (cccd, ma_khu_vuc) values (1000181817, 100);
-insert into nguoigiamsat (cccd, ma_khu_vuc) values (110101009, 102);
-insert into nguoigiamsat (cccd, ma_khu_vuc) values (1616161615, 103);
+insert into nguoigiamsat (cccd, ma_khu_vuc) values (100000003, 104);
+insert into nguoigiamsat (cccd, ma_khu_vuc) values (100000303, 104);
+insert into nguoigiamsat (cccd, ma_khu_vuc) values (100003303, 101);
+insert into nguoigiamsat (cccd, ma_khu_vuc) values (100033303, 101);
+insert into nguoigiamsat (cccd, ma_khu_vuc) values (130033303, 100);
+insert into nguoigiamsat (cccd, ma_khu_vuc) values (100000401, 100);
+insert into nguoigiamsat (cccd, ma_khu_vuc) values (100000001, 102);
+insert into nguoigiamsat (cccd, ma_khu_vuc) values (100044401, 102);
+insert into nguoigiamsat (cccd, ma_khu_vuc) values (140044401, 103);
+insert into nguoigiamsat (cccd, ma_khu_vuc) values (100000004, 103);
 
 insert into nguoilapcutri (cccd, ma_khu_vuc) values (110011100, 104);
-insert into nguoilapcutri (cccd, ma_khu_vuc) values (100000908, 101);
-insert into nguoilapcutri (cccd, ma_khu_vuc) values (1000000017, 100);
-insert into nguoilapcutri (cccd, ma_khu_vuc) values (100004401, 102);
-insert into nguoilapcutri (cccd, ma_khu_vuc) values (100044401, 103);
+insert into nguoilapcutri (cccd, ma_khu_vuc) values (120022202, 104);
+insert into nguoilapcutri (cccd, ma_khu_vuc) values (100000100, 101);
+insert into nguoilapcutri (cccd, ma_khu_vuc) values (100000202, 101);
+insert into nguoilapcutri (cccd, ma_khu_vuc) values (100000000, 100);
+insert into nguoilapcutri (cccd, ma_khu_vuc) values (100000002, 100);
+insert into nguoilapcutri (cccd, ma_khu_vuc) values (100001100, 102);
+insert into nguoilapcutri (cccd, ma_khu_vuc) values (100002202, 102);
+insert into nguoilapcutri (cccd, ma_khu_vuc) values (100011100, 103);
+insert into nguoilapcutri (cccd, ma_khu_vuc) values (100022202, 103);
 
 commit;
 -- -- quan 1

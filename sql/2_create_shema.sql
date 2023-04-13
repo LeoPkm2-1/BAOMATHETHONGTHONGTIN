@@ -163,3 +163,5 @@ create table sophieu(
         REFERENCES ungcuvien (ma_ung_cu_vien)
         on DELETE CASCADE
 );
+
+commit;

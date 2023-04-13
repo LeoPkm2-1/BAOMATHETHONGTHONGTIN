@@ -28,6 +28,7 @@ BEGIN
         when NO_DATA_FOUND then
             raise NO_DATA_FOUND;
 end;
+/
 
 
 -- nguoi giam sat giam sat khu vuc minh o
@@ -58,7 +59,7 @@ BEGIN
         when NO_DATA_FOUND then
             raise NO_DATA_FOUND;
 end;
-
+/
 
 
 
@@ -90,7 +91,7 @@ BEGIN
         when NO_DATA_FOUND then
             raise NO_DATA_FOUND;
 end;
-
+/
 
 
 -- khi update nguoi lap cu tri khu vuc lap cu tri phai la noi dang sinh song cua nguoi lap cu tri
@@ -120,7 +121,7 @@ BEGIN
         when NO_DATA_FOUND then
             raise NO_DATA_FOUND; 
 END;
-
+/
 
 
 
@@ -151,7 +152,7 @@ BEGIN
         when NO_DATA_FOUND then
             raise NO_DATA_FOUND; 
 END;
-
+/
 
 
 
@@ -182,7 +183,7 @@ BEGIN
         when NO_DATA_FOUND then
             raise NO_DATA_FOUND; 
 END;
-
+/
 
 
 
