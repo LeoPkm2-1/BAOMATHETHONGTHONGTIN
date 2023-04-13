@@ -58,7 +58,6 @@ create table ungcuvien(
     cccd NUMBER NOT NULL,
     ma_ung_cu_vien NUMBER PRIMARY KEY,
     ma_khu_vuc NUMBER NOT NULL,
-    so_phieu NUMBER DEFAULT 0 NOT NULL,
     CONSTRAINT fk_ungcuvien_cccd
         FOREIGN KEY(cccd)
         REFERENCES congdan ( cccd)
@@ -153,5 +152,14 @@ create table trangthaicutri(
     CONSTRAINT fk_trangthaict_ct
         FOREIGN KEY(cccd)
         REFERENCES cutri (cccd)
+        on DELETE CASCADE
+);
+
+create table sophieu(
+    ma_ung_cu_vien NUMBER NOT NULL,
+    so_phieu NUMBER DEFAULT 0 NOT NULL,
+    CONSTRAINT fk_sophieu_ungvien
+        FOREIGN KEY (ma_ung_cu_vien)
+        REFERENCES ungcuvien (ma_ung_cu_vien)
         on DELETE CASCADE
 );

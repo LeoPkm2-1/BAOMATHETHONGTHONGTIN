@@ -1,4 +1,5 @@
 -- user onwer of schema
+conn sys/123456 as sysdba
 create user elec 
     IDENTIFIED by elec
     DEFAULT TABLESPACE Users

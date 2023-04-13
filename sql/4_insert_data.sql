@@ -248,6 +248,8 @@ insert into nguoilapcutri (cccd, ma_khu_vuc) values (100000908, 101);
 insert into nguoilapcutri (cccd, ma_khu_vuc) values (1000000017, 100);
 insert into nguoilapcutri (cccd, ma_khu_vuc) values (100004401, 102);
 insert into nguoilapcutri (cccd, ma_khu_vuc) values (100044401, 103);
+
+commit;
 -- -- quan 1
 -- insert into cutri (cccd)
 -- values (100000003);
