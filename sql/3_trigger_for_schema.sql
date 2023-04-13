@@ -64,6 +64,7 @@ DECLARE
     PRAGMA exception_init( e_vi_pham_khuvuc, -20012 );
     -- tao bien local de luu lai khu vuc
     l_khuvuc NUMBER := 0;
+    l_tontai NUMBER := 0;
 BEGIN
     
     -- truy xuat khu vuc dang song hien tai va luu gia tri vao l_khuvuc
@@ -75,6 +76,26 @@ BEGIN
     if l_khuvuc =  :new.ma_khu_vuc then
         raise_application_error(-20012,'nguoi giam sat khong duoc quan ly khu vuc minh song');
     end if;
+
+    -- truy xuất xem người giam sat mới có tồn tại trong các bảng lap cu tri hay khong
+    select count(*)
+    into l_tontai
+    from nguoilapcutri
+    where :new.cccd = cccd;
+
+    if l_tontai != 0 then
+        raise_application_error(-20012,'nguoi giam sat khong duoc la nguoi lap cu tri');
+    end if;
+
+    -- truy xuất xem người giám sát mới có tồn tại trong bảng người theo dõi không
+    select count(*)
+    into l_tontai
+    from nguoitheodoi
+    where :new.cccd = cccd;
+
+    if l_tontai != 0 then 
+        raise_application_error(-20012, 'nguoi giam sat khong duoc la nguoi theo doi');
+    end if; 
 
     EXCEPTION
         -- xu ly khi cccd khong ton tai
@@ -96,6 +117,7 @@ DECLARE
     PRAGMA exception_init( e_vi_pham_khuvuc, -20013 );
     -- tao bien local de luu lai khu vuc
     l_khuvuc NUMBER := 0;
+    l_tontai NUMBER := 0;
 BEGIN
     
     -- truy xuat khu vuc dang song hien tai va luu gia tri vao l_khuvuc
@@ -106,6 +128,26 @@ BEGIN
 
     if l_khuvuc !=  :new.ma_khu_vuc then
         raise_application_error(-20013,'nguoi lap cu tri chi duoc lap cu tri cho khu vuc dang song');
+    end if;
+
+    -- truy xuất xem người lập cử tri có tồn tại trong bảng người giám sát không
+    select count(*)
+    into l_tontai
+    from nguoigiamsat
+    where :new.cccd = cccd;
+
+    if l_tontai != 0 then
+        raise_application_error(-20013,'nguoi lap cu tri khong duoc la nguoi giam sat');
+    end if;
+
+    -- truy xuất xem người lập cử tri có tồn tại trong bảng người theo dõi không
+    select count(*)
+    into l_tontai
+    from nguoitheodoi
+    where :new.cccd = cccd;
+
+    if l_tontai != 0 then 
+        raise_application_error(-20013, 'nguoi lap cu tri khong duoc la nguoi theo doi');
     end if;
 
     EXCEPTION
