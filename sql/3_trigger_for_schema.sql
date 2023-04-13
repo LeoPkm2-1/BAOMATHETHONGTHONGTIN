@@ -11,6 +11,7 @@ DECLARE
     PRAGMA exception_init( e_vi_pham_khuvuc, -20011 );
     -- tao bien local de luu lai khu vuc
     l_khuvuc NUMBER := 0;
+    l_tontai NUMBER := 0;
 BEGIN
     
     -- truy xuat khu vuc dang song hien tai va luu gia tri vao l_khuvuc
@@ -22,6 +23,27 @@ BEGIN
     if l_khuvuc =  :new.ma_khu_vuc then
         raise_application_error(-20011,'nguoi theo doi khong duoc quan ly khu vuc dang song');
     end if;
+
+    -- truy xuất xem người theo doi mới có tồn tại trong các bảng lap cu tri hay khong
+    select count(*)
+    into l_tontai
+    from nguoilapcutri
+    where :new.cccd = cccd;
+
+    if l_tontai != 0 then
+        raise_application_error(-20011,'nguoi theo doi khong duoc  la nguoi lap cu tri');
+    end if;
+
+    -- truy xuất xem người theo doi mới có tồn tại trong các bảng giam sat hay khong
+    select count(*)
+    into l_tontai
+    from nguoigiamsat
+    where :new.cccd = cccd;
+
+    if l_tontai != 0 then
+        raise_application_error(-20011,'nguoi theo doi khong duoc  la nguoi giam sat');
+    end if;    
+
 
     EXCEPTION
         -- xu ly khi cccd khong ton tai
@@ -167,6 +189,7 @@ DECLARE
     PRAGMA exception_init( e_vi_pham_khuvuc, -20023);
     -- tao bien local de luu lai khu vuc
     l_khuvuc NUMBER := 0;
+    l_tontai NUMBER := 0;
 BEGIN
     -- truy xuat khu vuc nguoi lap cu tri dang song
     select ma_khu_vuc
@@ -177,6 +200,26 @@ BEGIN
     if l_khuvuc = :new.ma_khu_vuc THEN
         raise_application_error(-20023, 'nguoi theo doi bat buoc giam sat khu vuc khac khu vuc minh dang song');
     end if;
+
+    -- truy xuất xem người theo doi mới có tồn tại trong các bảng lap cu tri hay khong
+    select count(*)
+    into l_tontai
+    from nguoilapcutri
+    where :new.cccd = cccd;
+
+    if l_tontai != 0 then
+        raise_application_error(-20023,'nguoi theo doi khong duoc  la nguoi lap cu tri');
+    end if;
+
+    -- truy xuất xem người theo doi mới có tồn tại trong các bảng giam sat hay khong
+    select count(*)
+    into l_tontai
+    from nguoigiamsat
+    where :new.cccd = cccd;
+
+    if l_tontai != 0 then
+        raise_application_error(-20023,'nguoi theo doi khong duoc  la nguoi giam sat');
+    end if;   
 
     EXCEPTION  
         -- xu ly khi cccd khong ton tai
