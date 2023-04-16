@@ -150,6 +150,7 @@ EXECUTE sa_components.create_group('access_election',20,'LCT','LAP_CU_TRI','GS')
 EXECUTE sa_components.create_group('access_election',30,'TD','THEO_DOI','GS');
 
 
+
 -- -- tạo nhãn
 conn elec_sec_admin/elec_sec_admin;
 
@@ -455,27 +456,59 @@ END;
 /
 
 
--- conn elec_sec_admin/elec_sec_admin;
--- BEGIN
---     sa_policy_admin.apply_table_policy (
---         policy_name => 'access_election',
---         schema_name => 'elec',
---         table_name => 'khuvuc',
---         table_options => 'ALL_CONTROL'
---     );
--- END;
--- /
+conn elec_sec_admin/elec_sec_admin;
+BEGIN
+    sa_policy_admin.apply_table_policy (
+        policy_name => 'access_election',
+        schema_name => 'elec',
+        table_name => 'khuvuc',
+        table_options => 'NO_CONTROL'
+    );
+END;
+/
 
 
--- CONN elec_sec_admin/elec_sec_admin;
--- BEGIN
---     sa_policy_admin.remove_table_policy
---         (policy_name => 'access_election',
---         schema_name => 'elec',
---         table_name => 'khuvuc');
+conn elec/elec;
+grant select on khuvuc to elec_sec_admin;
+grant insert , update, delete on khuvuc to elec_sec_admin;
 
--- END;
--- /
+conn elec_sec_admin/elec_sec_admin;
+update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','TOP_SENS');
+
+
+conn elec_sec_admin/elec_sec_admin;
+BEGIN
+    sa_policy_admin.remove_table_policy (
+        policy_name => 'access_election',
+        schema_name => 'elec',
+        table_name => 'khuvuc'
+    );
+    sa_policy_admin.apply_table_policy(
+        policy_name => 'access_election',
+        schema_name => 'elec',
+        table_name => 'khuvuc',
+        table_options => 'READ_CONTROL,WRITE_CONTROL,CHECK_CONTROL'
+    );
+END;
+/
+
+
+conn elec/elec;
+GRANT select on khuvuc to elec_giamsat_q1;
+GRANT insert on khuvuc to elec_giamsat_q1;
+
+CONN elec_sec_admin/elec_sec_admin;
+BEGIN
+    sa_policy_admin.remove_table_policy
+        (policy_name => 'access_election',
+        schema_name => 'elec',
+        table_name => 'khuvuc');
+
+END;
+/
+
+conn elec/elec;
+
 
 -- conn elec/elec;
 -- ALTER TABLE khuvuc

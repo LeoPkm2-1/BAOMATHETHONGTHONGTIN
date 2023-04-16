@@ -1,4 +1,4 @@
-conn sys as sysdba/123456;
+conn sys/123456 as sysdba;
 
 drop user elec_dan_q1 cascade;
 drop user elec_dan_q2 cascade;
