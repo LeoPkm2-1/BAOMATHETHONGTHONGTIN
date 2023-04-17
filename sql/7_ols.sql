@@ -140,9 +140,10 @@ EXECUTE sa_components.create_compartment('access_election',200,'Q2','QUAN_2');
 EXECUTE sa_components.create_compartment('access_election',300,'Q3','QUAN_3');
 EXECUTE sa_components.create_compartment('access_election',400,'Q4','QUAN_4');
 EXECUTE sa_components.create_compartment('access_election',500,'Q5','QUAN_5');
+EXECUTE sa_components.create_compartment('access_election',600,'BC','BAU_CU');
 
 
--- compartment
+-- Group
 conn elec_sec_admin/elec_sec_admin;
 
 EXECUTE sa_components.create_group('access_election',10,'GS','GIAM_SAT',NULL);
@@ -158,15 +159,15 @@ conn elec_sec_admin/elec_sec_admin;
 EXECUTE sa_label_admin.create_label('access_election', 100,'PUB');
 
 -- nhãn người giám sát quận 1 + log chọn cử trị quận 1 + lịch sử bầu cử quận 1 + phiếu bầu quận 1;
-EXECUTE sa_label_admin.create_label('access_election',4110,'TOP_SENS:Q1:GS');
+EXECUTE sa_label_admin.create_label('access_election',4110,'TOP_SENS:Q1,BC:GS');
 -- nhãn người giám sát quận 2 + log chọn cử trị quận 2 + lịch sử bầu cử quận 2 + phiếu bầu quận 2;
-EXECUTE sa_label_admin.create_label('access_election',4210,'TOP_SENS:Q2:GS');
+EXECUTE sa_label_admin.create_label('access_election',4210,'TOP_SENS:Q2,BC:GS');
 -- nhãn người giám sát quận 3 + log chọn cử trị quận 3 + lịch sử bầu cử quận 3 + phiếu bầu quận 3;
-EXECUTE sa_label_admin.create_label('access_election',4310,'TOP_SENS:Q3:GS');
+EXECUTE sa_label_admin.create_label('access_election',4310,'TOP_SENS:Q3,BC:GS');
 -- nhãn người giám sát quận 4 + log chọn cử trị quận 4 + lịch sử bầu cử quận 4 + phiếu bầu quận 4;
-EXECUTE sa_label_admin.create_label('access_election',4410,'TOP_SENS:Q4:GS');
+EXECUTE sa_label_admin.create_label('access_election',4410,'TOP_SENS:Q4,BC:GS');
 -- nhãn người giám sát quận 5 + log chọn cử trị quận 5 + lịch sử bầu cử quận 5 + phiếu bầu quận 5;
-EXECUTE sa_label_admin.create_label('access_election',4510,'TOP_SENS:Q5:GS');
+EXECUTE sa_label_admin.create_label('access_election',4510,'TOP_SENS:Q5,BC:GS');
 
 
 -- nhãn người theo dõi quận 1 + trang thái cử tri quận 1 + số phiếu quận 1;
@@ -207,15 +208,15 @@ EXECUTE sa_label_admin.create_label('access_election',250,'CONS:Q5');
 
 
 -- nhãn người cử tri 1;
-EXECUTE sa_label_admin.create_label('access_election',310,'SENS:Q1');
+EXECUTE sa_label_admin.create_label('access_election',310,'SENS:Q1,BC');
 -- nhãn người cử tri 2;
-EXECUTE sa_label_admin.create_label('access_election',320,'SENS:Q2');
+EXECUTE sa_label_admin.create_label('access_election',320,'SENS:Q2,BC');
 -- nhãn người cử tri 3;
-EXECUTE sa_label_admin.create_label('access_election',330,'SENS:Q3');
+EXECUTE sa_label_admin.create_label('access_election',330,'SENS:Q3,BC');
 -- nhãn người cử tri 4;
-EXECUTE sa_label_admin.create_label('access_election',340,'SENS:Q4');
+EXECUTE sa_label_admin.create_label('access_election',340,'SENS:Q4,BC');
 -- nhãn người cử tri 5;
-EXECUTE sa_label_admin.create_label('access_election',350,'SENS:Q5');
+EXECUTE sa_label_admin.create_label('access_election',350,'SENS:Q5,BC');
 
 
 
@@ -241,9 +242,10 @@ BEGIN
         sa_user_admin.set_user_labels (
             policy_name => 'access_election',
             user_name => 'elec_giamsat_q1',
-            max_read_label => 'TOP_SENS:Q1:GS',
+            max_read_label => 'TOP_SENS:Q1,BC:GS',
             max_write_label => '',
             min_write_label => '',
+            def_label=>'',
             row_label => ''
         );
 
@@ -251,9 +253,10 @@ BEGIN
         sa_user_admin.set_user_labels (
             policy_name => 'access_election',
             user_name => 'elec_giamsat_q2',
-            max_read_label => 'TOP_SENS:Q2:GS',
+            max_read_label => 'TOP_SENS:Q2,BC:GS',
             max_write_label => '',
             min_write_label => '',
+            def_label=>'',
             row_label => ''
         );
 
@@ -261,9 +264,10 @@ BEGIN
         sa_user_admin.set_user_labels (
             policy_name => 'access_election',
             user_name => 'elec_giamsat_q3',
-            max_read_label => 'TOP_SENS:Q3:GS',
+            max_read_label => 'TOP_SENS:Q3,BC:GS',
             max_write_label => '',
             min_write_label => '',
+            def_label=>'',
             row_label => ''
         );
 
@@ -271,9 +275,10 @@ BEGIN
         sa_user_admin.set_user_labels (
             policy_name => 'access_election',
             user_name => 'elec_giamsat_q4',
-            max_read_label => 'TOP_SENS:Q4:GS',
+            max_read_label => 'TOP_SENS:Q4,BC:GS',
             max_write_label => '',
             min_write_label => '',
+            def_label=>'',
             row_label => ''
         );
 
@@ -281,9 +286,10 @@ BEGIN
         sa_user_admin.set_user_labels (
             policy_name => 'access_election',
             user_name => 'elec_giamsat_q5',
-            max_read_label => 'TOP_SENS:Q5:GS',
+            max_read_label => 'TOP_SENS:Q5,BC:GS',
             max_write_label => '',
             min_write_label => '',
+            def_label=>'',
             row_label => ''
         );
 
@@ -294,53 +300,58 @@ END;
 -- -- gán nhãn cho người dùng theo doi
 conn elec_user_manage/elec_user_manage;
 BEGIN
-    -- giám sát quận 1
+    -- nguoi theo doi quận 1
         sa_user_admin.set_user_labels (
             policy_name => 'access_election',
             user_name => 'elec_theodoi_q1',
             max_read_label => 'SENS:Q1:TD',
             max_write_label => '',
             min_write_label => '',
+            def_label=>'',
             row_label => ''
         );
 
-    -- giám sát quận 2
+    -- nguoi theo doi quận 2
         sa_user_admin.set_user_labels (
             policy_name => 'access_election',
             user_name => 'elec_theodoi_q2',
             max_read_label => 'SENS:Q2:TD',
             max_write_label => '',
             min_write_label => '',
+            def_label=>'',
             row_label => ''
         );
 
-    -- giám sát quận 3
+    -- nguoi theo doi quận 3
         sa_user_admin.set_user_labels (
             policy_name => 'access_election',
             user_name => 'elec_theodoi_q3',
             max_read_label => 'SENS:Q3:TD',
             max_write_label => '',
             min_write_label => '',
+            def_label=>'',
             row_label => ''
         );
 
-    -- giám sát quận 4
+    -- nguoi theo doi quận 4
         sa_user_admin.set_user_labels (
             policy_name => 'access_election',
             user_name => 'elec_theodoi_q4',
             max_read_label => 'SENS:Q4:TD',
             max_write_label => '',
             min_write_label => '',
+            def_label=>'',
             row_label => ''
         );
 
-    -- giám sát quận 5
+    -- nguoi theo doi quận 5
         sa_user_admin.set_user_labels (
             policy_name => 'access_election',
             user_name => 'elec_theodoi_q5',
             max_read_label => 'SENS:Q5:TD',
             max_write_label => '',
             min_write_label => '',
+            def_label=>'',
             row_label => ''
         );
 END;
@@ -356,6 +367,7 @@ BEGIN
             max_read_label => 'SENS:Q1:LCT',
             max_write_label => '',
             min_write_label => '',
+            def_label=>'',
             row_label => ''
         );
 
@@ -366,6 +378,7 @@ BEGIN
             max_read_label => 'SENS:Q2:LCT',
             max_write_label => '',
             min_write_label => '',
+            def_label=>'',
             row_label => ''
         );
 
@@ -376,6 +389,7 @@ BEGIN
             max_read_label => 'SENS:Q3:LCT',
             max_write_label => '',
             min_write_label => '',
+            def_label=>'',
             row_label => ''
         );
 
@@ -386,6 +400,7 @@ BEGIN
             max_read_label => 'SENS:Q4:LCT',
             max_write_label => '',
             min_write_label => '',
+            def_label=>'',
             row_label => ''
         );
 
@@ -396,6 +411,7 @@ BEGIN
             max_read_label => 'SENS:Q5:LCT',
             max_write_label => '',
             min_write_label => '',
+            def_label=>'',
             row_label => ''
         );
 END;
@@ -404,52 +420,57 @@ END;
 -- -- gán nhãn cho người dân
 conn elec_user_manage/elec_user_manage;
 BEGIN
-    -- lập cử tri quận 1
+    -- dân quận 1
     sa_user_admin.set_user_labels (
         policy_name => 'access_election',
         user_name => 'elec_dan_q1',
         max_read_label => 'CONS:Q1',
         max_write_label => '',
         min_write_label => '',
+        def_label=>'',
         row_label => ''
     );
 
-    -- lập cử tri quận 2
+    -- dân quận 2
     sa_user_admin.set_user_labels (
         policy_name => 'access_election',
         user_name => 'elec_dan_q2',
         max_read_label => 'CONS:Q2',
         max_write_label => '',
         min_write_label => '',
+        def_label=>'',
         row_label => ''
     );
 
-    -- lập cử tri quận 3
+    -- dân quận 3
     sa_user_admin.set_user_labels (
         policy_name => 'access_election',
         user_name => 'elec_dan_q3',
         max_read_label => 'CONS:Q3',
         max_write_label => '',
         min_write_label => '',
+        def_label=>'',
         row_label => ''
     );    
-    -- lập cử tri quận 4
+    -- dân quận 4
     sa_user_admin.set_user_labels (
         policy_name => 'access_election',
         user_name => 'elec_dan_q4',
         max_read_label => 'CONS:Q4',
         max_write_label => '',
         min_write_label => '',
+        def_label=>'',
         row_label => ''
     );
 
-    -- lập cử tri quận 5
+    -- dân quận 5
     sa_user_admin.set_user_labels (
         policy_name => 'access_election',
         user_name => 'elec_dan_q5',
         max_read_label => 'CONS:Q5',
         max_write_label => '',
         min_write_label => '',
+        def_label=>'',
         row_label => ''
     );    
 END;
