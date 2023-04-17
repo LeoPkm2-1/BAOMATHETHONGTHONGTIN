@@ -1,12 +1,46 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: grey;
+  height: 100px;
+}
+
+.footer {
+  background-color: grey;
+  height: 50px;
+}
+
+.body {
+  height: 600px;
+  
+  display: flex;
+  flex-direction: row;
+}
+
+.infor {
+  background-color: white;
+  height: 600px;
+  width: 900px
+}
+
+.inter {
+  background-color: orange;
+  height: 600px;
+  width: 300px;
+}
+
 .col-sm-10 {
     background-color: white;
-    height: 700px;
+    height: 650px;
     border: 1px solid grey;
 }
 
 .col-sm-2 {
     background-color: rgb(128, 128, 128);
-    height: 700px;
+    height: 650px;
 }
 table {
     font-family: arial, sans-serif;
@@ -26,4 +60,8 @@ table {
 
   .btn-primary {
     margin: 600px 30px 30px 40px;
+  }
+
+  .span {
+    font-size: 100px;
   }
