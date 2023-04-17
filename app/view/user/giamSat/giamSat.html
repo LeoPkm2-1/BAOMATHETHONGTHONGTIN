@@ -1,17 +1,66 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+        <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
+        <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
+        <script src="tableScript.js"></script>
+        <script src="giamSat.js"></script>
+        <link rel="stylesheet" type="text/css" href="giamSatStyle.css">
+        <script>
 
+        </script>
     </head>
     <body>
-        <div>
-            <div class="banner">
-                <div class="menuDropDown"></div>
-                <div class="user"></div>
+        <div class="container">
+            <div class="header">
+                <h1>Header</h1>
             </div>
-            <div class="contenBody">
-
+            <div class="menu">
+                <div class="dropDownmenu">
+                    <div><a href="">Option 1</a></div>
+                    <div><a href="">Option 2</a></div>
+                    <div><a href="">Option 3</a></div>
+                    <div><a href="">Option 4</a></div>
+                    <div><a href="">Option 5</a></div>
+                </div>
+                <div class="userMenu">
+                    <div class="username"><a href="">User 1</a></div>
+                    <div class="role">Giám sát</div>
+                </div>
             </div>
+            <div style="display: flex;">
+                <div class="column1">
+                    <form>
+                        <select id="infoRequest">
+                            <option>Phiếu bầu nhận</option>
+                            <option>Ứng cử viên bầu theo cử tri</option>
+                        </select>
+                    </form>
+                    <div class="tableDiv"><table id="infoTable"></table></div>
+                    
+                </div>
+                <div class="column2">
+                    <h2>Column 2</h2>
+                    <br>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi velit quam, consequat vitae auctor eget, interdum ac purus.
+                    </p>
+                    <ul style="padding-left: 20px;">
+                        <li><a href="">Link 1</a></li>
+                        <li><a href="">Link 2</a></li>
+                        <li><a href="">Link 3</a></li>
+                        <li><a href="">Link 4</a></li>
+                        <li><a href="">Link 5</a></li>
+                        <li><a href="">Link 6</a></li>
+                        <li><a href="">Link 7</a></li>
+                        <li><a href="">Link 8</a></li>
+                        <li><a href="">Link 9</a></li> 
+                    </ul>
+                </div>
+            </div>
+            <div class="footer">Footer</div>
         </div>
     </body>
 </html>
