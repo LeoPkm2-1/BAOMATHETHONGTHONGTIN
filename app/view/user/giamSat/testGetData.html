@@ -9,7 +9,11 @@
         <script src="giamSat.js"></script>
         <link rel="stylesheet" type="text/css" href="giamSatStyle.css">
         <script>
-            
+            window.onload = function() {
+                document.getElementById("infoRequest").addEventListener("change", (event) => {
+                    chooseData(event.target.value, "infoTable");
+                })
+            }
         </script>
     </head>
     <body>
@@ -34,8 +38,8 @@
                 <div class="column1">
                     <form>
                         <select id="infoRequest">
-                            <option>Phiếu bầu nhận</option>
-                            <option>Ứng cử viên bầu theo cử tri</option>
+                            <option value="voteHistory">Phiếu bầu nhận</option>
+                            <option value="voteCurrentResult">Ứng cử viên bầu theo cử tri</option>
                         </select>
                     </form>
                     <div class="tableDiv"><table id="infoTable"></table></div>

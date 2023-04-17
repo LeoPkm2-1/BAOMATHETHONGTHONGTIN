@@ -39,7 +39,7 @@ var dataSet = [
 ];
 
 function drawTable (tableID, dataSet, tableTitle) {
-    $(tableID).DataTable({
+    $('#' + tableID).DataTable({
         data: dataSet,
         columns: tableTitle,
     });
