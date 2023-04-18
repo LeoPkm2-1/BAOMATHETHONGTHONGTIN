@@ -157,6 +157,18 @@ conn elec_sec_admin/elec_sec_admin;
 
 -- nhãn cho bảng khu vực;
 EXECUTE sa_label_admin.create_label('access_election', 100,'PUB');
+-- nhãn cho bảng khu vực quan 1;
+EXECUTE sa_label_admin.create_label('access_election', 110,'PUB:Q1');
+-- nhãn cho bảng khu vực quan 2;
+EXECUTE sa_label_admin.create_label('access_election', 120,'PUB:Q2');
+-- nhãn cho bảng khu vực quan 3;
+EXECUTE sa_label_admin.create_label('access_election', 130,'PUB:Q3');
+-- nhãn cho bảng khu vực quan 4;
+EXECUTE sa_label_admin.create_label('access_election', 140,'PUB:Q4');
+-- nhãn cho bảng khu vực quan 5;
+EXECUTE sa_label_admin.create_label('access_election', 150,'PUB:Q5');
+
+
 
 -- nhãn người giám sát quận 1 + log chọn cử trị quận 1 + lịch sử bầu cử quận 1 + phiếu bầu quận 1;
 EXECUTE sa_label_admin.create_label('access_election',4110,'TOP_SENS:Q1,BC:GS');
@@ -243,10 +255,10 @@ BEGIN
             policy_name => 'access_election',
             user_name => 'elec_giamsat_q1',
             max_read_label => 'TOP_SENS:Q1,BC:GS',
-            max_write_label => '',
-            min_write_label => '',
-            def_label=>'',
-            row_label => ''
+            max_write_label => 'TOP_SENS',
+            min_write_label => 'TOP_SENS',
+            def_label=>'TOP_SENS',
+            row_label => 'TOP_SENS'
         );
 
     -- giám sát quận 2
@@ -265,8 +277,8 @@ BEGIN
             policy_name => 'access_election',
             user_name => 'elec_giamsat_q3',
             max_read_label => 'TOP_SENS:Q3,BC:GS',
-            max_write_label => '',
-            min_write_label => '',
+            max_write_label => NULL,
+            min_write_label => NULL,
             def_label=>'',
             row_label => ''
         );
@@ -493,8 +505,19 @@ conn elec/elec;
 grant select on khuvuc to elec_sec_admin;
 grant insert , update, delete on khuvuc to elec_sec_admin;
 
-conn elec_sec_admin/elec_sec_admin;
-update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','TOP_SENS');
+conn elec/elec;
+grant select on khuvuc to elec_admin_full;
+grant insert , update, delete on khuvuc to elec_admin_full;
+
+-- conn elec_sec_admin/elec_sec_admin;
+-- update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','TOP_SENS');
+
+conn elec/elec;
+update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','PUB:Q1') where ma_khu_vuc = 100;
+update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','PUB:Q2') where ma_khu_vuc = 101;
+update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','PUB:Q3') where ma_khu_vuc = 102;
+update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','PUB:Q4') where ma_khu_vuc = 103;
+update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','PUB:Q5') where ma_khu_vuc = 104;
 
 
 conn elec_sec_admin/elec_sec_admin;
@@ -517,6 +540,11 @@ END;
 conn elec/elec;
 GRANT select on khuvuc to elec_giamsat_q1;
 GRANT insert on khuvuc to elec_giamsat_q1;
+GRANT select on khuvuc to elec_giamsat_q2;
+GRANT insert on khuvuc to elec_giamsat_q2;
+
+
+insert into elec.khuvuc values(123,'1hihi',120);
 
 CONN elec_sec_admin/elec_sec_admin;
 BEGIN

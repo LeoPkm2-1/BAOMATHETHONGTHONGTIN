@@ -27,7 +27,10 @@ drop user elec_giamsat_q5 cascade;
 drop role elec_roles;
 drop user elec_sec_admin cascade;
 drop user elec_user_manage cascade;
+drop user elec_admin_full cascade;
 drop user elec cascade;
+drop user testhihi cascade;
+drop user test_null cascade;
 
 
 conn lbacsys/123456;
