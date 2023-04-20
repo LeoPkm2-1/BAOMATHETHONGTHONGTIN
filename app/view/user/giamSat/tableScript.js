@@ -39,9 +39,8 @@ var dataSet = [
 ];
 
 var dataSet1 = [
-    {'name' :'Tiger Nixon', 'position':'System Architect', 'location':'Edinburgh', 'id':'5421', 'dateStart':'2011/04/25', 'salary':'$320,800'}
-]
-
+    [100000000, 'Pham Huu Phuc', '21-SEP-16', 0913635407, 'Thai Binh', 'Viet Nam', 'Quan 1', 'Quan 2', 'Y', 'N', 100]
+];
 
 function drawTable (tableID, dataSet, tableTitle) {
     $('#' + tableID).DataTable({
@@ -50,35 +49,17 @@ function drawTable (tableID, dataSet, tableTitle) {
     });
 }
 
-
 $(document).ready(function () {
     $('#infoTable').DataTable({
         data: dataSet1,
         columns: [
-            { 
-                title: 'Name',
-                data: 'name'
+            {
+                title: "CCCD"
             },
-            { 
-                title: 'Position',
-                data: 'position' 
+            {
+                title: "Họ tên"
             },
-            { 
-                title: 'Office',
-                data: 'location'
-            },
-            { 
-                title: 'Exbn.',
-                data: 'id' 
-            },
-            { 
-                title: 'Start date',
-                data: 'dateStart' 
-            },
-            { 
-                title: 'Salary', 
-                data: 'salary'
-            },
+
         ],
-    });
+    }).column(1).visible();
 });
