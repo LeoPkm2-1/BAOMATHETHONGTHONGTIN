@@ -7,6 +7,9 @@ TO elec_user_manage IDENTIFIED BY elec_user_manage;
 
 -- người quản lý toàn bộ bảng (để testing)
 GRANT connect TO elec_admin_full IDENTIFIED BY elec_admin_full;
+GRANT CREATE SESSION to elec_admin_full;
+grant create table to elec_admin_full;
+grant create view, create procedure, create TRIGGER,create sequence to elec_admin_full;
 
 -- quan ly chinh sách của ols
 GRANT connect TO elec_sec_admin IDENTIFIED BY elec_sec_admin;
