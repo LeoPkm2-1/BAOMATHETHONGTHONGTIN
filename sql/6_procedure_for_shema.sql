@@ -15,6 +15,3 @@ begin
 end;
 /
 GRANT execute ON pro_them_cutri TO elec_role_lapcutri;
-
-
-
