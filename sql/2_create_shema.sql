@@ -127,7 +127,6 @@ create table lichsubaucu (
         REFERENCES ungcuvien ( ma_ung_cu_vien)
         ON DELETE CASCADE,
     PRIMARY KEY (cccd_cutri,ma_ungcuvien,thoi_gian)
-
 );
 
 create table lichsuchoncutri(

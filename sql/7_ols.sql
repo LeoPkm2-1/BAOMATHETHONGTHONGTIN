@@ -12,81 +12,103 @@ GRANT connect TO elec_admin_full IDENTIFIED BY elec_admin_full;
 GRANT connect TO elec_sec_admin IDENTIFIED BY elec_sec_admin;
 
 -- -- các người dung trong he thống của oracle
-create role elec_roles;
-grant connect to elec_roles;
+create role elec_role;
+grant connect to elec_role;
 
 
 -- dan quan 1
 create user elec_dan_q1 IDENTIFIED BY elec_dan_q1;
-grant elec_roles to elec_dan_q1;
+grant elec_role to elec_dan_q1;
 -- dan quan 2
 create user elec_dan_q2 IDENTIFIED BY elec_dan_q2;
-grant elec_roles to elec_dan_q2;
+grant elec_role to elec_dan_q2;
 -- dan quan 3
 create user elec_dan_q3 IDENTIFIED BY elec_dan_q3;
-grant elec_roles to elec_dan_q3;
+grant elec_role to elec_dan_q3;
 -- dan quan 4
 create user elec_dan_q4 IDENTIFIED BY elec_dan_q4;
-grant elec_roles to elec_dan_q4;
+grant elec_role to elec_dan_q4;
 -- dan quan 5
 create user elec_dan_q5 IDENTIFIED BY elec_dan_q5;
-grant elec_roles to elec_dan_q5;
+grant elec_role to elec_dan_q5;
 
 
+-- role cho lập cử tri.
+create role elec_role_lapcutri;
 
 -- lap cu tri quan 1
 create user elec_lapctr_q1 IDENTIFIED BY elec_lapctr_q1;
-grant elec_roles to elec_lapctr_q1;
+grant elec_role to elec_lapctr_q1;
+grant elec_role_lapcutri to elec_lapctr_q1;
 -- lap cu tri quan 2
 create user elec_lapctr_q2 IDENTIFIED BY elec_lapctr_q2;
-grant elec_roles to elec_lapctr_q2;
+grant elec_role to elec_lapctr_q2;
+grant elec_role_lapcutri to elec_lapctr_q2;
 -- lap cu tri quan 3
 create user elec_lapctr_q3 IDENTIFIED BY elec_lapctr_q3;
-grant elec_roles to elec_lapctr_q3;
+grant elec_role to elec_lapctr_q3;
+grant elec_role_lapcutri to elec_lapctr_q3;
 -- lap cu tri quan 4
 create user elec_lapctr_q4 IDENTIFIED BY elec_lapctr_q4;
-grant elec_roles to elec_lapctr_q4;
+grant elec_role to elec_lapctr_q4;
+grant elec_role_lapcutri to elec_lapctr_q4;
 -- lap cu tri quan 5
 create user elec_lapctr_q5 IDENTIFIED BY elec_lapctr_q5;
-grant elec_roles to elec_lapctr_q5;
+grant elec_role to elec_lapctr_q5;
+grant elec_role_lapcutri to elec_lapctr_q5;
 
 
 
+-- role cho theo dõi.
+create role elec_role_theodoi;
 
 -- theo doi quan 1
 create user elec_theodoi_q1 IDENTIFIED BY elec_theodoi_q1;
-grant elec_roles to elec_theodoi_q1;
+grant elec_role to elec_theodoi_q1;
+grant elec_role_theodoi to elec_theodoi_q1;
 -- theo doi quan 2
 create user elec_theodoi_q2 IDENTIFIED BY elec_theodoi_q2;
-grant elec_roles to elec_theodoi_q2;
+grant elec_role to elec_theodoi_q2;
+grant elec_role_theodoi to elec_theodoi_q2;
 -- theo doi quan 3
 create user elec_theodoi_q3 IDENTIFIED BY elec_theodoi_q3;
-grant elec_roles to elec_theodoi_q3;
+grant elec_role to elec_theodoi_q3;
+grant elec_role_theodoi to elec_theodoi_q3;
 -- theo doi quan 4
 create user elec_theodoi_q4 IDENTIFIED BY elec_theodoi_q4;
-grant elec_roles to elec_theodoi_q4;
+grant elec_role to elec_theodoi_q4;
+grant elec_role_theodoi to elec_theodoi_q4;
 -- theo doi quan 5
 create user elec_theodoi_q5 IDENTIFIED BY elec_theodoi_q5;
-grant elec_roles to elec_theodoi_q5;
+grant elec_role to elec_theodoi_q5;
+grant elec_role_theodoi to elec_theodoi_q5;
 
 
+
+-- create role giám sát
+create role elec_role_damsat;
 
 
 -- dam sat quan 1
 create user elec_giamsat_q1 IDENTIFIED BY elec_giamsat_q1;
-grant elec_roles to elec_giamsat_q1;
+grant elec_role to elec_giamsat_q1;
+grant elec_role_damsat to elec_giamsat_q1;
 -- dam sat quan 2
 create user elec_giamsat_q2 IDENTIFIED BY elec_giamsat_q2;
-grant elec_roles to elec_giamsat_q2;
+grant elec_role to elec_giamsat_q2;
+grant elec_role_damsat to elec_giamsat_q2;
 -- dam sat quan 3
 create user elec_giamsat_q3 IDENTIFIED BY elec_giamsat_q3;
-grant elec_roles to elec_giamsat_q3;
+grant elec_role to elec_giamsat_q3;
+grant elec_role_damsat to elec_giamsat_q3;
 -- dam sat quan 4
 create user elec_giamsat_q4 IDENTIFIED BY elec_giamsat_q4;
-grant elec_roles to elec_giamsat_q4;
+grant elec_role to elec_giamsat_q4;
+grant elec_role_damsat to elec_giamsat_q4;
 -- dam sat quan 5
 create user elec_giamsat_q5 IDENTIFIED BY elec_giamsat_q5;
-grant elec_roles to elec_giamsat_q5;
+grant elec_role to elec_giamsat_q5;
+grant elec_role_damsat to elec_giamsat_q5;
 
 
 conn lbacsys/123456;
@@ -255,10 +277,10 @@ BEGIN
             policy_name => 'access_election',
             user_name => 'elec_giamsat_q1',
             max_read_label => 'TOP_SENS:Q1,BC:GS',
-            max_write_label => 'TOP_SENS',
-            min_write_label => 'TOP_SENS',
-            def_label=>'TOP_SENS',
-            row_label => 'TOP_SENS'
+            max_write_label => '',
+            min_write_label => '',
+            def_label=>'',
+            row_label => ''
         );
 
     -- giám sát quận 2
@@ -277,8 +299,8 @@ BEGIN
             policy_name => 'access_election',
             user_name => 'elec_giamsat_q3',
             max_read_label => 'TOP_SENS:Q3,BC:GS',
-            max_write_label => NULL,
-            min_write_label => NULL,
+            max_write_label => '',
+            min_write_label => '',
             def_label=>'',
             row_label => ''
         );
@@ -436,7 +458,7 @@ BEGIN
     sa_user_admin.set_user_labels (
         policy_name => 'access_election',
         user_name => 'elec_dan_q1',
-        max_read_label => 'CONS:Q1',
+        max_read_label => 'SENS:Q1,BC',
         max_write_label => '',
         min_write_label => '',
         def_label=>'',
@@ -447,7 +469,7 @@ BEGIN
     sa_user_admin.set_user_labels (
         policy_name => 'access_election',
         user_name => 'elec_dan_q2',
-        max_read_label => 'CONS:Q2',
+        max_read_label => 'SENS:Q2,BC',
         max_write_label => '',
         min_write_label => '',
         def_label=>'',
@@ -458,7 +480,7 @@ BEGIN
     sa_user_admin.set_user_labels (
         policy_name => 'access_election',
         user_name => 'elec_dan_q3',
-        max_read_label => 'CONS:Q3',
+        max_read_label => 'SENS:Q3,BC',
         max_write_label => '',
         min_write_label => '',
         def_label=>'',
@@ -468,7 +490,7 @@ BEGIN
     sa_user_admin.set_user_labels (
         policy_name => 'access_election',
         user_name => 'elec_dan_q4',
-        max_read_label => 'CONS:Q4',
+        max_read_label => 'SENS:Q4,BC',
         max_write_label => '',
         min_write_label => '',
         def_label=>'',
@@ -479,7 +501,7 @@ BEGIN
     sa_user_admin.set_user_labels (
         policy_name => 'access_election',
         user_name => 'elec_dan_q5',
-        max_read_label => 'CONS:Q5',
+        max_read_label => 'SENS:Q5,BC',
         max_write_label => '',
         min_write_label => '',
         def_label=>'',
@@ -489,76 +511,388 @@ END;
 /
 
 
-conn elec_sec_admin/elec_sec_admin;
-BEGIN
-    sa_policy_admin.apply_table_policy (
-        policy_name => 'access_election',
-        schema_name => 'elec',
-        table_name => 'khuvuc',
-        table_options => 'NO_CONTROL'
-    );
-END;
-/
 
 
-conn elec/elec;
-grant select on khuvuc to elec_sec_admin;
-grant insert , update, delete on khuvuc to elec_sec_admin;
 
-conn elec/elec;
-grant select on khuvuc to elec_admin_full;
-grant insert , update, delete on khuvuc to elec_admin_full;
+
 
 -- conn elec_sec_admin/elec_sec_admin;
 -- update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','TOP_SENS');
 
-conn elec/elec;
-update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','PUB:Q1') where ma_khu_vuc = 100;
-update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','PUB:Q2') where ma_khu_vuc = 101;
-update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','PUB:Q3') where ma_khu_vuc = 102;
-update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','PUB:Q4') where ma_khu_vuc = 103;
-update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','PUB:Q5') where ma_khu_vuc = 104;
+-- cập nhật nhãn cho bảng -khu vực- rồi áp dụng chính sách lên đó.
+    conn elec_sec_admin/elec_sec_admin;
+    BEGIN
+        sa_policy_admin.apply_table_policy (
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'khuvuc',
+            table_options => 'NO_CONTROL'
+        );
+    END;
+    /
+
+    conn elec/elec;
+    update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','PUB:Q1') where ma_khu_vuc = 100;
+    update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','PUB:Q2') where ma_khu_vuc = 101;
+    update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','PUB:Q3') where ma_khu_vuc = 102;
+    update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','PUB:Q4') where ma_khu_vuc = 103;
+    update elec.khuvuc set OLS_ACC_COLUMN = char_to_label('access_election','PUB:Q5') where ma_khu_vuc = 104;
+
+    conn elec_sec_admin/elec_sec_admin;
+    BEGIN
+        sa_policy_admin.remove_table_policy (
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'khuvuc'
+        );
+        sa_policy_admin.apply_table_policy(
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'khuvuc',
+            table_options => 'READ_CONTROL,WRITE_CONTROL,CHECK_CONTROL'
+        );
+    END;
+    /
+
+    conn elec/elec;
+    grant select on khuvuc to elec_sec_admin;
+    grant select,insert,update,delete on khuvuc to elec_admin_full;
+    grant select on khuvuc to elec_role;
 
 
-conn elec_sec_admin/elec_sec_admin;
-BEGIN
-    sa_policy_admin.remove_table_policy (
-        policy_name => 'access_election',
-        schema_name => 'elec',
-        table_name => 'khuvuc'
-    );
-    sa_policy_admin.apply_table_policy(
-        policy_name => 'access_election',
-        schema_name => 'elec',
-        table_name => 'khuvuc',
-        table_options => 'READ_CONTROL,WRITE_CONTROL,CHECK_CONTROL'
-    );
-END;
-/
+-- cập nhật nhãn cho bảng -người dân- rồi áp dụng chính sách lên đó.
+    conn elec_sec_admin/elec_sec_admin;
+    BEGIN
+        sa_policy_admin.apply_table_policy (
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'congdan',
+            table_options => 'NO_CONTROL'
+        );
+    END;
+    /
+
+    conn elec/elec;
+    update elec.congdan set OLS_ACC_COLUMN = char_to_label('access_election','CONS:Q1') where ma_khu_vuc =100;
+    update elec.congdan set OLS_ACC_COLUMN = char_to_label('access_election','CONS:Q2') where ma_khu_vuc =101;
+    update elec.congdan set OLS_ACC_COLUMN = char_to_label('access_election','CONS:Q3') where ma_khu_vuc =102;
+    update elec.congdan set OLS_ACC_COLUMN = char_to_label('access_election','CONS:Q4') where ma_khu_vuc =103;
+    update elec.congdan set OLS_ACC_COLUMN = char_to_label('access_election','CONS:Q5') where ma_khu_vuc =104;
+
+    conn elec_sec_admin/elec_sec_admin;
+    BEGIN
+        sa_policy_admin.remove_table_policy (
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'congdan'
+        );
+        sa_policy_admin.apply_table_policy(
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'congdan',
+            table_options => 'READ_CONTROL,WRITE_CONTROL,CHECK_CONTROL'
+        );
+    END;
+    /
+
+    conn elec/elec;
+    grant select on congdan to elec_sec_admin;
+    grant select,insert,update,delete on congdan to elec_admin_full;
+    grant select on congdan to elec_role;
 
 
-conn elec/elec;
-GRANT select on khuvuc to elec_giamsat_q1;
-GRANT insert on khuvuc to elec_giamsat_q1;
-GRANT select on khuvuc to elec_giamsat_q2;
-GRANT insert on khuvuc to elec_giamsat_q2;
+-- cập nhật nhãn cho bảng -ứng viên- rồi áp dụng chính sách lên đó.
+    conn elec_sec_admin/elec_sec_admin;
+    BEGIN
+        sa_policy_admin.apply_table_policy (
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'ungcuvien',
+            table_options => 'NO_CONTROL'
+        );
+    END;
+    /
+
+    conn elec/elec;
+    update elec.ungcuvien set OLS_ACC_COLUMN = char_to_label('access_election','CONS:Q1') where ma_khu_vuc = 100;
+    update elec.ungcuvien set OLS_ACC_COLUMN = char_to_label('access_election','CONS:Q2') where ma_khu_vuc = 101;
+    update elec.ungcuvien set OLS_ACC_COLUMN = char_to_label('access_election','CONS:Q3') where ma_khu_vuc = 102;
+    update elec.ungcuvien set OLS_ACC_COLUMN = char_to_label('access_election','CONS:Q4') where ma_khu_vuc = 103;
+    update elec.ungcuvien set OLS_ACC_COLUMN = char_to_label('access_election','CONS:Q5') where ma_khu_vuc = 104;
+
+    conn elec_sec_admin/elec_sec_admin;
+    BEGIN
+        sa_policy_admin.remove_table_policy (
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'ungcuvien'
+        );
+        sa_policy_admin.apply_table_policy(
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'ungcuvien',
+            table_options => 'READ_CONTROL,WRITE_CONTROL,CHECK_CONTROL'
+        );
+    END;
+    /
+
+    conn elec/elec;
+    grant select on ungcuvien to elec_sec_admin;
+    grant select,insert,update,delete on ungcuvien to elec_admin_full;
+    grant select on ungcuvien to elec_role;
 
 
-insert into elec.khuvuc values(123,'1hihi',120);
 
-CONN elec_sec_admin/elec_sec_admin;
-BEGIN
-    sa_policy_admin.remove_table_policy
-        (policy_name => 'access_election',
-        schema_name => 'elec',
-        table_name => 'khuvuc');
+-- cập nhật nhãn cho bảng -lập cử tri- rồi áp dụng chính sách lên đó.
+    conn elec_sec_admin/elec_sec_admin;
+    BEGIN
+        sa_policy_admin.apply_table_policy (
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'nguoilapcutri',
+            table_options => 'NO_CONTROL'
+        );
+    END;
+    /
 
-END;
-/
+    conn elec/elec;
+    update elec.nguoilapcutri set OLS_ACC_COLUMN = char_to_label('access_election','SENS:Q1:LCT') where ma_khu_vuc = 100;
+    update elec.nguoilapcutri set OLS_ACC_COLUMN = char_to_label('access_election','SENS:Q2:LCT') where ma_khu_vuc = 101;
+    update elec.nguoilapcutri set OLS_ACC_COLUMN = char_to_label('access_election','SENS:Q3:LCT') where ma_khu_vuc = 102;
+    update elec.nguoilapcutri set OLS_ACC_COLUMN = char_to_label('access_election','SENS:Q4:LCT') where ma_khu_vuc = 103;
+    update elec.nguoilapcutri set OLS_ACC_COLUMN = char_to_label('access_election','SENS:Q5:LCT') where ma_khu_vuc = 104;
 
-conn elec/elec;
+    conn elec_sec_admin/elec_sec_admin;
+    BEGIN
+        sa_policy_admin.remove_table_policy (
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'nguoilapcutri'
+        );
+        sa_policy_admin.apply_table_policy(
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'nguoilapcutri',
+            table_options => 'READ_CONTROL,WRITE_CONTROL,CHECK_CONTROL'
+        );
+    END;
+    /
+
+    conn elec/elec;
+    grant select on nguoilapcutri to elec_sec_admin;
+    grant select,insert,update,delete on nguoilapcutri to elec_admin_full;
+    grant select on nguoilapcutri to elec_role_lapcutri;
+    grant select on nguoilapcutri to elec_role_damsat;
 
 
--- conn elec/elec;
--- ALTER TABLE khuvuc
---  DROP COLUMN OLS_ACC_COLUMN;
+
+-- cập nhật nhãn cho bảng -theo dõi- rồi áp dụng chính sách lên đó.
+    conn elec_sec_admin/elec_sec_admin;
+    BEGIN
+        sa_policy_admin.apply_table_policy (
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'nguoitheodoi',
+            table_options => 'NO_CONTROL'
+        );
+    END;
+    /
+
+    conn elec/elec;
+    update elec.nguoitheodoi set OLS_ACC_COLUMN = char_to_label('access_election','SENS:Q1:TD') where ma_khu_vuc = 100;
+    update elec.nguoitheodoi set OLS_ACC_COLUMN = char_to_label('access_election','SENS:Q2:TD') where ma_khu_vuc = 101;
+    update elec.nguoitheodoi set OLS_ACC_COLUMN = char_to_label('access_election','SENS:Q3:TD') where ma_khu_vuc = 102;
+    update elec.nguoitheodoi set OLS_ACC_COLUMN = char_to_label('access_election','SENS:Q4:TD') where ma_khu_vuc = 103;
+    update elec.nguoitheodoi set OLS_ACC_COLUMN = char_to_label('access_election','SENS:Q5:TD') where ma_khu_vuc = 104;
+
+
+    conn elec_sec_admin/elec_sec_admin;
+    BEGIN
+        sa_policy_admin.remove_table_policy (
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'nguoitheodoi'
+        );
+        sa_policy_admin.apply_table_policy(
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'nguoitheodoi',
+            table_options => 'READ_CONTROL,WRITE_CONTROL,CHECK_CONTROL'
+        );
+    END;
+    /
+
+    conn elec/elec;
+    grant select on nguoitheodoi to elec_sec_admin;
+    grant select,insert,update,delete on nguoitheodoi to elec_admin_full;
+    grant select on nguoitheodoi to elec_role_theodoi;
+    grant select on nguoitheodoi to elec_role_damsat;
+
+
+
+-- cập nhật nhãn cho bảng -nguoigiamsat- rồi áp dụng chính sách lên đó.
+    conn elec_sec_admin/elec_sec_admin;
+    BEGIN
+        sa_policy_admin.apply_table_policy (
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'nguoigiamsat',
+            table_options => 'NO_CONTROL'
+        );
+    END;
+    /
+
+    conn elec/elec;
+    update elec.nguoigiamsat set OLS_ACC_COLUMN = char_to_label('access_election','TOP_SENS:Q1,BC:GS') where ma_khu_vuc = 100;
+    update elec.nguoigiamsat set OLS_ACC_COLUMN = char_to_label('access_election','TOP_SENS:Q2,BC:GS') where ma_khu_vuc = 101;
+    update elec.nguoigiamsat set OLS_ACC_COLUMN = char_to_label('access_election','TOP_SENS:Q3,BC:GS') where ma_khu_vuc = 102;
+    update elec.nguoigiamsat set OLS_ACC_COLUMN = char_to_label('access_election','TOP_SENS:Q4,BC:GS') where ma_khu_vuc = 103;
+    update elec.nguoigiamsat set OLS_ACC_COLUMN = char_to_label('access_election','TOP_SENS:Q5,BC:GS') where ma_khu_vuc = 104;
+
+
+    conn elec_sec_admin/elec_sec_admin;
+    BEGIN
+        sa_policy_admin.remove_table_policy (
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'nguoigiamsat'
+        );
+        sa_policy_admin.apply_table_policy(
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'nguoigiamsat',
+            table_options => 'READ_CONTROL,WRITE_CONTROL,CHECK_CONTROL'
+        );
+    END;
+    /
+
+    conn elec/elec;
+    grant select on nguoigiamsat to elec_sec_admin;
+    grant select,insert,update,delete on nguoigiamsat to elec_admin_full;
+    grant select on nguoigiamsat to elec_role_damsat;
+
+    
+-- cập nhật nhãn cho bảng -phieu-bau- rồi áp dụng chính sách lên đó.
+    conn elec_sec_admin/elec_sec_admin;
+    BEGIN
+        sa_policy_admin.apply_table_policy(
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'phieubau',
+            table_options => 'READ_CONTROL,WRITE_CONTROL,CHECK_CONTROL'
+        );
+    END;
+    /
+    conn elec/elec;
+    grant select on phieubau to elec_sec_admin;
+    grant select,insert,update,delete on phieubau to elec_admin_full;
+    grant select,insert,update,delete on phieubau to elec_dan_q1;
+    grant select,insert,update,delete on phieubau to elec_dan_q2;
+    grant select,insert,update,delete on phieubau to elec_dan_q3;
+    grant select,insert,update,delete on phieubau to elec_dan_q4;
+    grant select,insert,update,delete on phieubau to elec_dan_q5;
+    grant select on phieubau to elec_role_damsat;
+
+
+
+-- cập nhật nhãn cho bảng -lichsubaucu- rồi áp dụng chính sách lên đó.
+    conn elec_sec_admin/elec_sec_admin;
+    BEGIN
+        sa_policy_admin.apply_table_policy(
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'lichsubaucu',
+            table_options => 'READ_CONTROL,WRITE_CONTROL,CHECK_CONTROL'
+        );
+    END;
+    /
+    conn elec/elec;
+    grant select on lichsubaucu to elec_sec_admin;
+    grant select,insert,update,delete on lichsubaucu to elec_admin_full;
+    grant select on lichsubaucu to elec_role_damsat;
+
+
+-- cập nhật nhãn cho bảng -cutri- rồi áp dụng chính sách lên đó.
+    conn elec_sec_admin/elec_sec_admin;
+    BEGIN
+        sa_policy_admin.apply_table_policy(
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'cutri',
+            table_options => 'READ_CONTROL,WRITE_CONTROL,CHECK_CONTROL'
+        );
+    END;
+    /
+    conn elec/elec;
+    grant select on cutri to elec_sec_admin;
+    grant select,insert,update,delete on cutri to elec_admin_full;
+    grant select on cutri to elec_role;
+    grant select, insert, update, delete on cutri to elec_role_lapcutri;  
+
+
+-- cập nhật nhãn cho bảng -trangthaicutri- rồi áp dụng chính sách lên đó.
+    conn elec_sec_admin/elec_sec_admin;
+    BEGIN
+        sa_policy_admin.apply_table_policy(
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'trangthaicutri',
+            table_options => 'READ_CONTROL,WRITE_CONTROL,CHECK_CONTROL'
+        );
+    END;
+    /
+    conn elec/elec;
+    grant select on trangthaicutri to elec_sec_admin;
+    grant select,insert,update,delete on trangthaicutri to elec_admin_full;
+    grant select on trangthaicutri to elec_role_theodoi;
+    grant select on trangthaicutri to elec_role_damsat;
+
+
+-- cập nhật nhãn cho bảng -sophieu- rồi áp dụng chính sách lên đó.
+    conn elec_sec_admin/elec_sec_admin;
+    BEGIN
+        sa_policy_admin.apply_table_policy(
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'sophieu',
+            table_options => 'READ_CONTROL,WRITE_CONTROL,CHECK_CONTROL'
+        );
+    END;
+    /
+    conn elec/elec;
+    grant select on sophieu to elec_sec_admin;
+    grant select,insert,update,delete on sophieu to elec_admin_full;
+    grant select on sophieu to elec_role_theodoi;
+    grant select on sophieu to elec_role_damsat;    
+
+
+
+-- cập nhật nhãn cho bảng -lichsuchoncutri- rồi áp dụng chính sách lên đó.
+    conn elec_sec_admin/elec_sec_admin;
+    BEGIN
+        sa_policy_admin.apply_table_policy(
+            policy_name => 'access_election',
+            schema_name => 'elec',
+            table_name => 'lichsuchoncutri',
+            table_options => 'READ_CONTROL,WRITE_CONTROL,CHECK_CONTROL'
+        );
+    END;
+    /
+    conn elec/elec;
+    grant select on lichsuchoncutri to elec_sec_admin;
+    grant select,insert,update,delete on lichsuchoncutri to elec_admin_full;
+    grant select on lichsuchoncutri to elec_role_damsat;    
+
+-- CONN elec_sec_admin/elec_sec_admin;
+-- BEGIN
+--     sa_policy_admin.remove_table_policy
+--         (policy_name => 'access_election',
+--         schema_name => 'elec',
+--         table_name => 'khuvuc');
+
+-- END;
+-- /
+
+
+
+
