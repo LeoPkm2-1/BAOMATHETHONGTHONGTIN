@@ -28,7 +28,6 @@ async function chooseData(requestInfo, tableID) {
     }
     data = JSON.parse(await getData(url + '/' + api + '/' + requestInfo));
     console.log(tableID);
-    $('#' + tableID).DataTable().destroy();
     /*
     let tableElement = document.createElement("table");
     tableElement.setAttribute("id", tableID);

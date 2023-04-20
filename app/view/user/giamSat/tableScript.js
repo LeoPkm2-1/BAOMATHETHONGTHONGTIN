@@ -38,23 +38,28 @@ var dataSet = [
     ['Unity Butler', 'Marketing Designer', 'San Francisco', '5384', '2009/12/09', '$85,675'],
 ];
 
+var dataSet1 = [
+    [100000000, 'Pham Huu Phuc', '21-SEP-16', 0913635407, 'Thai Binh', 'Viet Nam', 'Quan 1', 'Quan 2', 'Y', 'N', 100]
+];
+
 function drawTable (tableID, dataSet, tableTitle) {
     $('#' + tableID).DataTable({
-        data: dataSet,
+        data: dataSet1,
         columns: tableTitle,
     });
 }
- 
+
 $(document).ready(function () {
     $('#infoTable').DataTable({
-        data: dataSet,
+        data: dataSet1,
         columns: [
-            { title: 'Name' },
-            { title: 'Position' },
-            { title: 'Office' },
-            { title: 'Extn.' },
-            { title: 'Start date' },
-            { title: 'Salary' },
+            {
+                title: "CCCD"
+            },
+            {
+                title: "Họ tên"
+            },
+
         ],
-    });
+    }).column(1).visible();
 });
