@@ -635,200 +635,33 @@ execute SA_SESSION.RESTORE_DEFAULT_LABELS('access_election');
 
 -- test trigger.======================================================================
 
-conn elec/elec;
-create table a_i (
-    num NUMBER DEFAULT 0,
-    cha CHAR DEFAULT 'A'
-);
-
-create table a_u (
-    num NUMBER DEFAULT 0,
-    cha CHAR DEFAULT 'A',
-    usr VARCHAR2(50)
-);
-
-conn elec/elec;
-insert into a_i values(1,'b');
-insert into a_u values(1,'b',USER);
-
-conn elec/elec;
-select * from elec.a_i;
-select * from elec.a_u;
-
-conn testhihi/testhihi;
-select * from elec.a_i;
-select * from elec.a_u;
-
-
-conn elec/elec;
-grant select,insert,update,delete on a_i to test_null;
-grant select,insert,update,delete on a_u to test_null;
-
-
-conn test_null/test_null;
-select * from elec.a_i;
-select * from elec.a_u;
-
-
-conn test_null/test_null;
-insert into elec.a_i values(2,'c');
-insert into elec.a_u values(2,'c',USER);
-select * from elec.a_i;
-select * from elec.a_u;
 
 
 
-conn elec_giamsat_q2/elec_giamsat_q2;
-select * from elec.a_i;
-select * from elec.a_u;
 
 
 
--- không tạo được vì không có quyền đọc trên a_i
-conn testhihi/testhihi;
-create  OR REPLACE TRIGGER a_i_log_a_u
-    before INSERT 
-    on elec.a_i
-    for EACH ROW
-BEGIN
-    NULL;
-end;
-/
-
--- gán quyền truy tạo trigger cho mọi bảng trong mọi schema
-conn sys/123456 as sysdba;
-grant create any trigger to testhihi;
-
-conn testhihi/testhihi;
-create  OR REPLACE TRIGGER a_i_log_a_u
-    before INSERT 
-    on elec.a_i
-    for EACH ROW
-BEGIN
-    NULL;
-end;
-/
-
-
--- do chưa cấp quyền insert vào a_u cho testhihi
-conn testhihi/testhihi;
-create  OR REPLACE TRIGGER a_i_log_a_u
-    before INSERT 
-    on elec.a_i
-    for EACH ROW
-BEGIN
-    insert into elec.a_u values (:new.num,:new.cha,USER);
-end;
-/
-
-conn elec/elec;
-grant select,insert,update,delete on a_u to testhihi;
-
-
-conn testhihi/testhihi;
-create  OR REPLACE TRIGGER a_i_log_a_u
-    before INSERT 
-    on elec.a_i
-    for EACH ROW
-BEGIN
-    insert into elec.a_u values (:new.num,:new.cha,USER);
-end;
-/
-
-conn elec/elec;
-insert into a_i values(3,'d');
-select * from a_i;
-select * from a_u;
-
-conn test_null/test_null;
-insert into elec.a_i values(4,'e');
-select * from elec.a_i;
-select * from elec.a_u;
-
-
-conn elec/elec;
-grant select,insert,update,delete on a_i to elec_giamsat_q2;
-grant select,insert,update,delete on a_u to elec_giamsat_q2;
-grant select,insert,update,delete on a_i to testhihi;
-
-conn elec_giamsat_q2/elec_giamsat_q2;
-insert into elec.a_i values(5,'f');
-select * from elec.a_i;
-select * from elec.a_u;
-
-conn elec_sec_admin/elec_sec_admin;
-BEGIN
-    sa_policy_admin.apply_table_policy (
-        policy_name => 'access_election',
-        schema_name => 'elec',
-        table_name => 'a_u',
-        table_options => 'NO_CONTROL'
-    );
-END;
-/
-
-
-conn elec_giamsat_q2/elec_giamsat_q2;
-execute SA_SESSION.SET_ROW_LABEL('access_election','CONS:Q2');
-insert into elec.a_u values(0,'-',USER,char_to_label('access_election','PUB'));
 
 
 
-update elec.a_u set OLS_ACC_COLUMN = char_to_label('access_election','PUB');
-
-
-conn elec_sec_admin/elec_sec_admin;
-BEGIN
-    sa_policy_admin.remove_table_policy (
-        policy_name => 'access_election',
-        schema_name => 'elec',
-        table_name => 'a_u'
-    );
-    sa_policy_admin.apply_table_policy(
-        policy_name => 'access_election',
-        schema_name => 'elec',
-        table_name => 'a_u',
-        table_options => 'READ_CONTROL,WRITE_CONTROL,CHECK_CONTROL'
-    );
-END;
-/
 
 
 
-conn elec_giamsat_q2/elec_giamsat_q2;
-insert into elec.a_u values(5,'f',USER,char_to_label('access_election','SENS:Q5,BC'));
-insert into elec.a_u values(8,'u',USER,char_to_label('access_election','TOP_SENS:Q1,BC:GS'));
-
-conn elec_giamsat_q2/elec_giamsat_q2;
-insert into elec.a_u values(5,'f',USER,char_to_label('access_election','SENS:Q2,BC'));
 
 
-conn test_null/test_null;
-insert into elec.a_u values(6,'g',USER,char_to_label('access_election','CONS:Q1'));
-insert into elec.a_u values(8,'u',USER,char_to_label('access_election','TOP_SENS:Q1,BC:GS'));
-
-conn test_null/test_null;
-insert into elec.a_u values(6,'g',USER,char_to_label('access_election','CONS:Q5'));
-
-conn testhihi/testhihi;
-insert into elec.a_u values(7,'h',USER,char_to_label('access_election','SENS'));
 
 
-conn testhihi/testhihi;
-insert into elec.a_u values(7,'h',USER,char_to_label('access_election','SENS:Q1:TD'));
-insert into elec.a_u values(8,'u',USER,char_to_label('access_election','TOP_SENS:Q1,BC:GS'));
-
-conn elec/elec;
-insert into a_i values(8,'i');
 
 
-conn elec_giamsat_q2/elec_giamsat_q2;
-insert into elec.a_i values(9,'k');
-conn test_null/test_null;
-insert into elec.a_i values(9,'k');
 
-conn testhihi/testhihi;
-insert into elec.a_i values(9,'k');
+
+
+
+
+
+
+
+
 
 
 
