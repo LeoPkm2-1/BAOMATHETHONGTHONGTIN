@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: grey;
+  height: 100px;
+}
+
+.footer {
+  background-color: grey;
+  height: 50px;
+}
+
+.body {
+  height: 600px;
+  
+  display: flex;
+  flex-direction: row;
+}
+
+.infor {
+  background-color: white;
+  height: 600px;
+  width: 1100px
+}
+
+.inter {
+  background-color: orange;
+  height: 600px;
+  width: 300px;
+}
+
+.col-sm-10 {
+    background-color: white;
+    height: 650px;
+    border: 1px solid grey;
+}
+
+.col-sm-2 {
+    background-color: rgb(128, 128, 128);
+    height: 650px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .btn-primary {
+    margin: 500px 30px 30px 70px;
+  }
+
+  .span {
+    font-size: 100px;
+  }
