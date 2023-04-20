@@ -2,29 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-        <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
-        <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
-        <script src="tableScriptTest.js"></script>
-        <<script src="giamSat.js"></script>
-        <link rel="stylesheet" type="text/css" href="giamSatStyle.css">
-        <script>
-            $(document).ready(function () {
-                const neededInfo = document.getElementById("infoRequest");
-                neededInfo.addEventListener("change", (event) => {
-                    $("#infoTable").DataTable().clear().draw().destroy();
-                    chooseData(event.target.value, "infoTable");
-                });
-                chooseData(neededInfo.value, "infoTable");
-            });
-            /*
-            window.onload = function() {
-                document.getElementById("infoRequest").addEventListener("change", (event) => {
-                    chooseData(event.target.value, "infoTable");
-                })
-            }
-            */
-        </script>
+        <link rel="stylesheet" type="text/css" href="user.css">
     </head>
     <body>
         <div class="container">
@@ -46,13 +24,15 @@
             </div>
             <div style="display: flex;">
                 <div class="column1">
+                    <h2><div class="username">User 1</div></h2>
                     <form>
-                        <select id="infoRequest">
-                            <option value="voteHistory">Phiếu bầu nhận</option>
-                            <option value="voteCurrentResult">Ứng cử viên bầu theo cử tri</option>
-                        </select>
+                        <label for="name">Họ tên</label>
+                        <input id="name" type="text">
+                        
                     </form>
-                    <div class="tableDiv"><table id="infoTable"></table></div>
+                    <form>
+
+                    </form>
                 </div>
                 <div class="column2">
                     <h2>Column 2</h2>

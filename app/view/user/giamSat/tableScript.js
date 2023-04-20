@@ -38,23 +38,47 @@ var dataSet = [
     ['Unity Butler', 'Marketing Designer', 'San Francisco', '5384', '2009/12/09', '$85,675'],
 ];
 
+var dataSet1 = [
+    {'name' :'Tiger Nixon', 'position':'System Architect', 'location':'Edinburgh', 'id':'5421', 'dateStart':'2011/04/25', 'salary':'$320,800'}
+]
+
+
 function drawTable (tableID, dataSet, tableTitle) {
     $('#' + tableID).DataTable({
-        data: dataSet,
+        data: dataSet1,
         columns: tableTitle,
     });
 }
- 
+
+
 $(document).ready(function () {
     $('#infoTable').DataTable({
-        data: dataSet,
+        data: dataSet1,
         columns: [
-            { title: 'Name' },
-            { title: 'Position' },
-            { title: 'Office' },
-            { title: 'Extn.' },
-            { title: 'Start date' },
-            { title: 'Salary' },
+            { 
+                title: 'Name',
+                data: 'name'
+            },
+            { 
+                title: 'Position',
+                data: 'position' 
+            },
+            { 
+                title: 'Office',
+                data: 'location'
+            },
+            { 
+                title: 'Exbn.',
+                data: 'id' 
+            },
+            { 
+                title: 'Start date',
+                data: 'dateStart' 
+            },
+            { 
+                title: 'Salary', 
+                data: 'salary'
+            },
         ],
     });
 });
