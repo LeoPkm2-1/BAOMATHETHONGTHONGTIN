@@ -1,5 +1,4 @@
 const excuteSql = require('./index');
-const a = require('crypto').randomBytes(64).toString('hex')
 
 
 getNguoiDan = () =>{
@@ -21,5 +20,39 @@ getNguoiDanByCCCD = (cccd) =>{
     },[cccd],true);
 };
 
-console.log(a);
-module.exports = {getNguoiDan,getNguoiDanByCCCD};
+getNguoiGiamSatByCCCD = (cccd) =>{
+    return excuteSql(
+        `select * from elec.nguoigiamsat where cccd = :cccd`,{
+            user:'elec_admin_full',
+            password:'elec_admin_full',
+            connectString: 'localhost/orcl'            
+        },[cccd],true)
+}
+
+getNguoiLapCuTriByCCCD = (cccd) =>{
+    return excuteSql(
+        `select * from elec.nguoilapcutri where cccd = :cccd`,{
+            user:'elec_admin_full',
+            password:'elec_admin_full',
+            connectString: 'localhost/orcl'            
+        },[cccd],true)
+}
+
+getNguoiTheoDoiByCCCD = (cccd) =>{
+    return excuteSql(
+        `select * from elec.nguoitheodoi where cccd = :cccd`,{
+            user:'elec_admin_full',
+            password:'elec_admin_full',
+            connectString: 'localhost/orcl'            
+        },[cccd],true)
+
+}
+
+
+module.exports = {
+    getNguoiDan,
+    getNguoiDanByCCCD,
+    getNguoiGiamSatByCCCD,
+    getNguoiLapCuTriByCCCD,
+    getNguoiTheoDoiByCCCD
+};

@@ -100,7 +100,7 @@ values (1000002019, 'Tran Huu R', to_date('21-SEP-16','DD-MON-RR'), 0910431207, 
 insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc)
 values (100001100, 'Tran Huu Phuc', to_date('22-SEP-16','DD-MON-RR'), 0912478407, 'Quang Binh', 'Viet Nam', 'Quan 3', 'Quan 2', 'N', 'N', 102);
 insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc)
-values (100002202, 'Nguyen Van Phu', to_date('22-SEP-16','DD-MON-RR'), 091536254364, 'Quang Binh', 'Viet Nam', 'Quan 3', 'Quan 3', 'N', 'Y', 102);
+values (100002202, 'Nguyen Van Phu', to_date('22-SEP-16','DD-MON-RR'), 091536254364, 'Quang Binh', 'Viet Nam', 'Quan 3', 'Quan 3', 'N', 'N', 102);
 insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc)
 values (100003303, 'Trieu Dinh Phuc', to_date('23-SEP-16','DD-MON-RR'), 0941735407, 'Hai Giang', 'Viet Nam', 'Quan 3', 'Quan 4', 'N', 'N', 102);
 insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc)
@@ -219,6 +219,18 @@ insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuon
 values (1919191918, 'Tran Quang N', to_date('22-SEP-16','DD-MON-RR'), 0913717307, 'Tay Ninh', 'Viet Nam', 'Quan 5', 'Quan 2', 'N', 'N', 104);
 insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc)
 values (2020202019, 'Tran Van M', to_date('21-SEP-16','DD-MON-RR'), 0916633207, 'Bac Ninh', 'Viet Nam', 'Quan 5', 'Quan 4', 'N', 'N', 104);
+insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc) values(100004,'Nguyen Van D',to_date('1-SEP-15','DD-MON-RR'),0987654,'Hai Phong','Viet Nam','Quan 10','Quan 2','N','Y',101);
+insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc) values(100005,'Nguyen Van E',to_date('1-SEP-15','DD-MON-RR'),0987654,'Hai Phong','Viet Nam','Quan 10','Quan 2','N','Y',102);
+insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc) values(100006,'Nguyen Van F',to_date('1-SEP-15','DD-MON-RR'),0987654,'Hai Phong','Viet Nam','Quan 10','Quan 2','N','Y',103);
+insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc) values(100007,'Nguyen Van G',to_date('1-SEP-15','DD-MON-RR'),0987654,'Hai Phong','Viet Nam','Quan 10','Quan 2','N','Y',104);
+insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc) values(100008,'Nguyen Van D',to_date('1-SEP-15','DD-MON-RR'),0987654,'Hai Phong','Viet Nam','Quan 10','Quan 2','Y','Y',101);
+insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc) values(100009,'Nguyen Van E',to_date('1-SEP-15','DD-MON-RR'),0987654,'Hai Phong','Viet Nam','Quan 10','Quan 2','Y','Y',102);
+insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc) values(100021,'Nguyen Van F',to_date('1-SEP-15','DD-MON-RR'),0987654,'Hai Phong','Viet Nam','Quan 10','Quan 2','Y','Y',103);
+insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc) values(100022,'Nguyen Van G',to_date('1-SEP-15','DD-MON-RR'),0987654,'Hai Phong','Viet Nam','Quan 10','Quan 2','Y','Y',104);
+insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc) values(100023,'Nguyen Van D',to_date('1-SEP-15','DD-MON-RR'),0987654,'Hai Phong','Viet Nam','Quan 10','Quan 2','Y','N',101);
+insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc) values(100024,'Nguyen Van E',to_date('1-SEP-15','DD-MON-RR'),0987654,'Hai Phong','Viet Nam','Quan 10','Quan 2','Y','N',102);
+insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc) values(100025,'Nguyen Van F',to_date('1-SEP-15','DD-MON-RR'),0987654,'Hai Phong','Viet Nam','Quan 10','Quan 2','Y','N',103);
+insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc) values(100026,'Nguyen Van G',to_date('1-SEP-15','DD-MON-RR'),0987654,'Hai Phong','Viet Nam','Quan 10','Quan 2','Y','N',104);
 
 -- ungcuvien
 insert into ungcuvien (cccd, ma_ung_cu_vien, ma_khu_vuc) values (100000002, 1001, 100);
@@ -266,153 +278,9 @@ insert into nguoilapcutri (cccd, ma_khu_vuc) values (100011100, 103);
 insert into nguoilapcutri (cccd, ma_khu_vuc) values (100022202, 103);
 
 commit;
--- -- quan 1
--- insert into cutri (cccd)
--- values (100000003);
--- insert into cutri (cccd)
--- values (100000001);
--- insert into cutri (cccd)
--- values (100000007);
--- insert into cutri (cccd)
--- values (100000008);
--- insert into cutri (cccd)
--- values (100000009);
--- insert into cutri (cccd)
--- values (1000000011);
--- insert into cutri (cccd)
--- values (1000000012);
--- insert into cutri (cccd)
--- values (1000000013);
--- insert into cutri (cccd)
--- values (1000000014);
--- insert into cutri (cccd)
--- values (1000000015);
--- insert into cutri (cccd)
--- values (1000000016);
--- insert into cutri (cccd)
--- values (1000000018);
--- insert into cutri (cccd)
--- values (1000000019);
 
--- -- quan 2
--- insert into cutri (cccd)
--- values (100000504);
--- insert into cutri (cccd)
--- values (100000605);
--- insert into cutri (cccd)
--- values (100000706);
--- insert into cutri (cccd)
--- values (100001009);
--- insert into cutri (cccd)
--- values (100001110);
--- insert into cutri (cccd)
--- values (1000001211);
--- insert into cutri (cccd)
--- values (1000001312);
--- insert into cutri (cccd)
--- values (1000001413);
--- insert into cutri (cccd)
--- values (1000001514);
--- insert into cutri (cccd)
--- values (1000001615);
--- insert into cutri (cccd)
--- values (1000001716);
--- insert into cutri (cccd)
--- values (1000001817);
--- insert into cutri(cccd)
--- values (1000001918);
--- insert into cutri (cccd)
--- values (1000002019);
--- -- quan3
--- insert into cutri (cccd)
--- values (100001100);
--- insert into cutri (cccd)
--- values (100002202);
--- insert into cutri (cccd)
--- values (100003303);
--- insert into cutri (cccd)
--- values (100007706);
--- insert into cutri (cccd)
--- values (100008807);
--- insert into cutri (cccd)
--- values (100009908);
--- insert into cutri (cccd)
--- values (100111110);
--- insert into cutri (cccd)
--- values (1000121211);
--- insert into cutri (cccd)
--- values (1000131312);
--- insert into cutri (cccd)
--- values (1000141413);
--- insert into cutri (cccd)
--- values (1000151514);
--- insert into cutri (cccd)
--- values (1000161615);
--- insert into cutri (cccd)
--- values (1000171716);
--- insert into cutri (cccd)
--- values (1000181817);
--- insert into cutri (cccd)
--- values (1000191918);
--- insert into cutri (cccd)
--- values (1000202019);
--- -- quan4
--- insert into cutri (cccd)
--- values (100033303);
--- insert into cutri (cccd)
--- values (100055504);
--- insert into cutri (cccd)
--- values (100066605);
--- insert into cutri (cccd)
--- values (100088807);
--- insert into cutri (cccd)
--- values (100099908);
--- insert into cutri (cccd)
--- values (1012121211);
--- insert into cutri (cccd)
--- values (1013131312);
--- insert into cutri (cccd)
--- values (1014141413);
--- insert into cutri (cccd)
--- values (1015151514);
--- insert into cutri (cccd)
--- values (1016161615);
--- insert into cutri (cccd)
--- values (1017171716);
--- insert into cutri (cccd)
--- values (1018181817);
--- insert into cutri (cccd)
--- values (1019191918);
--- insert into cutri (cccd)
--- values (1020202019);
--- -- quan5
--- insert into cutri (cccd)
--- values (130033303);
--- insert into cutri  (cccd)
--- values (140044401);
--- insert into cutri  (cccd)
--- values (150055504);
--- insert into cutri (cccd)
--- values (160066605);
--- insert into cutri(cccd)
--- values (180088807);
--- insert into cutri (cccd)
--- values (190099908);
--- insert into cutri (cccd)
--- values (100101009);
--- insert into cutri (cccd)
--- values (1212121211);
--- insert into cutri (cccd)
--- values (1313131312);
--- insert into cutri (cccd)
--- values (1414141413);
--- insert into cutri (cccd)
--- values (1515151514);
--- insert into cutri (cccd)
--- values (1616161615);
--- insert into cutri (cccd)
--- values (1717171716);
--- insert into cutri (cccd)
--- values (1818181817);
--- insert into cutri (cccd)
--- values (1919191918);
+
+
+
+
+
