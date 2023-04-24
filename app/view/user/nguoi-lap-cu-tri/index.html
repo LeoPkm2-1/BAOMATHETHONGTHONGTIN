@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
+        <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
+        <script src="tableScriptTest.js"></script>
+        <<script src="giamSat.js"></script>
+        <link rel="stylesheet" type="text/css" href="giamSatStyle.css">
+        <script>
+            $(document).ready(function () {
+                const neededInfo = document.getElementById("infoRequest");
+                neededInfo.addEventListener("change", (event) => {
+                    $("#infoTable").DataTable().clear().draw().destroy();
+                    chooseData(event.target.value, "infoTable");
+                });
+                chooseData(neededInfo.value, "infoTable");
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Header</h1>
+            </div>
+            <div class="menu">
+                <div class="dropDownmenu">
+                    <div><a href="">Option 1</a></div>
+                    <div><a href="">Option 2</a></div>
+                    <div><a href="">Option 3</a></div>
+                    <div><a href="">Option 4</a></div>
+                    <div><a href="">Option 5</a></div>
+                </div>
+                <div class="userMenu">
+                    <div class="username"><a href="">User 1</a></div>
+                    <div class="role">Giám sát</div>
+                </div>
+            </div>
+            <div style="display: flex;">
+                <div class="column1">
+                    <form>
+                        <select id="infoRequest">
+                            <option value="voteHistory">Phiếu bầu nhận</option>
+                            <option value="voteCurrentResult">Ứng cử viên bầu theo cử tri</option>
+                        </select>
+                    </form>
+                    <div class="tableDiv"><table id="infoTable"></table></div>
+                </div>
+                <div class="column2">
+                    <h2>Column 2</h2>
+                    <br>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi velit quam, consequat vitae auctor eget, interdum ac purus.
+                    </p>
+                    <ul style="padding-left: 20px;">
+                        <li><a href="">Link 1</a></li>
+                        <li><a href="">Link 2</a></li>
+                        <li><a href="">Link 3</a></li>
+                        <li><a href="">Link 4</a></li>
+                        <li><a href="">Link 5</a></li>
+                        <li><a href="">Link 6</a></li>
+                        <li><a href="">Link 7</a></li>
+                        <li><a href="">Link 8</a></li>
+                        <li><a href="">Link 9</a></li> 
+                    </ul>
+                </div>
+            </div>
+            <div class="footer">Footer</div>
+        </div>
+    </body>
+</html>

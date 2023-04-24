@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/css/user.css">
+        <script src="/script/cuTri.js"></script>
+        <script src="cuTri.js"></script>
+        <script>
+            addEventListener("DOMContentLoaded", (event) => {
+                drawCanidate("", "");
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Header</h1>
+            </div>
+            <div class="menu">
+                <div class="dropDownmenu">
+                    <div><a href="">Option 1</a></div>
+                    <div><a href="">Option 2</a></div>
+                    <div><a href="">Option 3</a></div>
+                    <div><a href="">Option 4</a></div>
+                    <div><a href="">Option 5</a></div>
+                </div>
+                <div class="userMenu">
+                    <div class="username"><a href="/user">User 1</a></div>
+                    <div class="role">Giám sát</div>
+                </div>
+            </div>
+            <div style="display: flex;">
+                <div class="column1">
+                    <h2><div class="username">User 1</div></h2>
+                    <!--
+                    <form>
+                        <label for="cccd">CCCD</label>
+                        <input id="cccd" type="text" disabled value="123456">
+                        <br>
+                        <label for="name">Họ tên</label>
+                        <input id="name" type="text">
+                        <br>
+                        <label for="birthdate">Ngày sinh</label>
+                        <input id="birthdate" type="date">
+                        <br>
+                        <label for="sdt">Số điện thoại</label>
+                        <input id="sdt" type="text">
+                        <br>
+                        <label for="hometown">Quê quán</label>
+                        <input id="hometown" type="text">
+                        <br>
+                        <label for="resident">Thường trú</label>
+                        <input id="resident" type="text">
+                        <br>
+                        <label for="currentStay">Tạm trú</label>
+                        <input id="currentStay" type="text">
+                        <br>
+                        <label for="criminalRecord">Tiền án</label>
+                        <select id="mentalHealthRecord">
+                            <option value="Y">Có</option>
+                            <option value="N">Không</option>
+                        </select>
+                        <br>
+                        <label for="mentalHealthRecord">Bệnh lý</label>
+                        <select id="mentalHealthRecord">
+                            <option value="Y">Có</option>
+                            <option value="N">Không</option>
+                        </select>
+                        <br>
+                    </form>
+                    -->
+                    <div>
+
+                    </div>
+                    <form>
+                        <fieldset>
+                            <legend>Chọn ứng cử viên:</legend>
+                            <div id="canidate"></div>
+                            <input type="submit" value="Bỏ phiếu">
+                        </fieldset>
+                        
+                    </form>
+                </div>
+                <div class="column2">
+                    <h2>Column 2</h2>
+                    <br>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi velit quam, consequat vitae auctor eget, interdum ac purus.
+                    </p>
+                    <ul style="padding-left: 20px;">
+                        <li><a href="">Link 1</a></li>
+                        <li><a href="">Link 2</a></li>
+                        <li><a href="">Link 3</a></li>
+                        <li><a href="">Link 4</a></li>
+                        <li><a href="">Link 5</a></li>
+                        <li><a href="">Link 6</a></li>
+                        <li><a href="">Link 7</a></li>
+                        <li><a href="">Link 8</a></li>
+                        <li><a href="">Link 9</a></li> 
+                    </ul>
+                </div>
+            </div>
+            <div class="footer">Footer</div>
+        </div>
+    </body>
+</html>

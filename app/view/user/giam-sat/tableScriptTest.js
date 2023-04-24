@@ -3,4 +3,5 @@ function drawTable (tableID, dataSet, tableTitle) {
         data: dataSet,
         columns: tableTitle,
     });
+    console.log(tableTitle);
 }
