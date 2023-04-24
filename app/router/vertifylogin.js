@@ -1,9 +1,8 @@
 const express  = require('express');
 const router = express.Router();
 
+const vertifyloginController = require('../controller/vertifyloginController')
 
-router.post('/',(req,res)=>{
-    res.send('ahihi');
-})
+router.post('/',vertifyloginController.checkMacthUserName)
 
 module.exports = router;

@@ -2,7 +2,7 @@ const oracledb = require('oracledb');
 oracledb.autoCommit = true;
 const getEnv = require('../config/config');
 
-excuteSql = async (sql_statment,db_infor) =>{
+excuteSql = async (sql_statment,db_infor,binding=[],isObject=false) =>{
     let poolcon;
     let successful = false;
     let result = null;
@@ -15,7 +15,17 @@ excuteSql = async (sql_statment,db_infor) =>{
         let connection;
         try {
             connection =await poolcon.getConnection();
-            result = await connection.execute(sql_statment);
+            if(isObject){
+                result = await connection.execute(
+                    sql_statment,binding,
+                    { outFormat: oracledb.OUT_FORMAT_OBJECT }
+                );
+            }
+            else{
+                result = await connection.execute(
+                    sql_statment,
+                    binding);
+            }
         } catch (error) {
             throw (error)
         } finally{

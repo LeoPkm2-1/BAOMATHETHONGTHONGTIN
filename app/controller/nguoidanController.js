@@ -3,7 +3,7 @@ const nguoidanModel = require('../model/nguoidanModels');
 
 getNguoiDan = async (req,res) => {
     try {
-        const data =await nguoidanModel()
+        const data =await nguoidanModel.getNguoiDan()
         console.log(data.rows);
         console.log(data.rows);
         res.send(data.rows);

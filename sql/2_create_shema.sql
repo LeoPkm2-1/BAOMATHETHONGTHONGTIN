@@ -20,7 +20,7 @@ create table congdan(
     tien_an CHAR ( 1) DEFAULT 'N' NOT NULL,
     benh_ly CHAR ( 1) DEFAULT 'N' NOT NULL,
     ma_khu_vuc NUMBER  NOT NULL,
-    mat_khau VARCHAR2 (256) DEFAULT '123456' NOT NULL,
+    mat_khau VARCHAR2 (256) DEFAULT '$argon2id$v=19$m=65536,t=3,p=4$WGMdijBQUz6k8r4j3JFobQ$gQ2uACA8Xk+TInepyJKpzFYAQhRoG2svlMHWjm3PxCs' NOT NULL, -- 123456
     CONSTRAINT fk_congdan_khuvuc
         FOREIGN KEY( ma_khu_vuc )
         REFERENCES khuvuc ( ma_khu_vuc )
@@ -96,10 +96,9 @@ create table nguoigiamsat(
 
 
 
--- mot bang can co primary key nen de ma_phieu là so thu tu cua phieu
+-- mot bang can co primary key nen de 
 create table phieubau(
-    ma_phieu NUMBER PRIMARY KEY,
-    cccd_cutri NUMBER NOT NULL,
+    cccd_cutri NUMBER NOT NULL PRIMARY KEY,
     ma_ungcuvien NUMBER NOT NULL,
     thoi_gian TIMESTAMP  NOT NULL,
     CONSTRAINT fk_cccd_cutri_bo_phieu

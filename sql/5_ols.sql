@@ -243,6 +243,18 @@ EXECUTE sa_label_admin.create_label('access_election',240,'CONS:Q4');
 EXECUTE sa_label_admin.create_label('access_election',250,'CONS:Q5');
 
 
+--  nhãn trạng thái bầu cử quận 1; 
+EXECUTE sa_label_admin.create_label('access_election',315,'SENS:Q1');
+--  nhãn trạng thái bầu cử quận 2; 
+EXECUTE sa_label_admin.create_label('access_election',325,'SENS:Q2');
+--  nhãn trạng thái bầu cử quận 3; 
+EXECUTE sa_label_admin.create_label('access_election',335,'SENS:Q3');
+--  nhãn trạng thái bầu cử quận 4; 
+EXECUTE sa_label_admin.create_label('access_election',345,'SENS:Q4');
+--  nhãn trạng thái bầu cử quận 5; 
+EXECUTE sa_label_admin.create_label('access_election',355,'SENS:Q5');
+
+
 
 -- nhãn người cử tri 1;
 EXECUTE sa_label_admin.create_label('access_election',310,'SENS:Q1,BC');
@@ -789,11 +801,11 @@ END;
     conn elec/elec;
     grant select on phieubau to elec_sec_admin;
     grant select,insert,update,delete on phieubau to elec_admin_full;
-    grant select,insert,update,delete on phieubau to elec_dan_q1;
-    grant select,insert,update,delete on phieubau to elec_dan_q2;
-    grant select,insert,update,delete on phieubau to elec_dan_q3;
-    grant select,insert,update,delete on phieubau to elec_dan_q4;
-    grant select,insert,update,delete on phieubau to elec_dan_q5;
+    grant select,insert,delete on phieubau to elec_dan_q1;
+    grant select,insert,delete on phieubau to elec_dan_q2;
+    grant select,insert,delete on phieubau to elec_dan_q3;
+    grant select,insert,delete on phieubau to elec_dan_q4;
+    grant select,insert,delete on phieubau to elec_dan_q5;
     grant select on phieubau to elec_role_damsat;
 
 
@@ -830,7 +842,7 @@ END;
     grant select on cutri to elec_sec_admin;
     grant select,insert,update,delete on cutri to elec_admin_full;
     grant select on cutri to elec_role;
-    grant select, insert, update, delete on cutri to elec_role_lapcutri;  
+    grant select, insert, delete on cutri to elec_role_lapcutri;  
 
 
 -- cập nhật nhãn cho bảng -trangthaicutri- rồi áp dụng chính sách lên đó.

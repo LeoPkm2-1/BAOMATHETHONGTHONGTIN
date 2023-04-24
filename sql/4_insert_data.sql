@@ -10,7 +10,13 @@ insert into khuvuc (ma_khu_vuc, ten_khu_vuc) values (104, 'Quan 5');
 
 -- quan 1
 insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc)
-values (100000000, 'Pham Huu Phuc', to_date('21-SEP-16','DD-MON-RR'), 0913635407, 'Thai Binh', 'Viet Nam', 'Quan 1', 'Quan 2', 'Y', 'N', 100);
+values(100002,'Nguyen Van A',to_date('11-SEP-16','DD-MON-RR'),0987654,'Hai Phong','Viet Nam','Quan 10','Quan 2','Y','Y',100)
+insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc)
+values(100003,'Nguyen Van B',to_date('1-SEP-16','DD-MON-RR'),0987654,'Hai Phong','Viet Nam','Quan 10','Quan 2','Y','N',100)
+insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc)
+values(100004,'Nguyen Van C',to_date('1-SEP-15','DD-MON-RR'),0987654,'Hai Phong','Viet Nam','Quan 10','Quan 2','N','Y',100)
+insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc)
+values (100000000, 'Pham Huu Phuc', to_date('21-SEP-16','DD-MON-RR'), 0913635407, 'Thai Binh', 'Viet Nam', 'Quan 1', 'Quan 2', 'N', 'N', 100);
 insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc)
 values (100000002, 'Pham Huu Phu', to_date('21-SEP-16','DD-MON-RR'), 0913632364, 'Thai Binh', 'Viet Nam', 'Quan 1', 'Quan 3', 'N', 'N', 100);
 insert into congdan (cccd, ho_va_ten, ngay_sinh, sdt, que_quan, quoc_tich, thuong_tru, tam_tru, tien_an, benh_ly, ma_khu_vuc)
