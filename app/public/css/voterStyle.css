@@ -54,6 +54,10 @@ body {
     padding: 5px;
 }
 
+#votingForm {
+    background-color:white;
+}
+
 .footer {
     background-color: #cccc99;
     padding-top: 5px;

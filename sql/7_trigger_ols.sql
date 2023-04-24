@@ -1,4 +1,4 @@
-conn sys/123456 as sysdba;
+conn sys/4GTuqhecnELH3qoI as sysdba;
 grant create any trigger to elec_admin_full;
 
 conn elec_admin_full/elec_admin_full;

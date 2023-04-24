@@ -1,4 +1,4 @@
-conn sys/123456 as sysdba;
+conn sys/4GTuqhecnELH3qoI as sysdba;
 
 drop user elec_dan_q1 cascade;
 drop user elec_dan_q2 cascade;
@@ -36,7 +36,7 @@ drop role elec_role_damsat;
 drop role elec_role_theodoi;
 
 
-conn lbacsys/123456;
+conn lbacsys/PyAV8uBsuHra1JcF;
 
 begin
     SA_SYSDBA.DROP_POLICY(

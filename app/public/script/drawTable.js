@@ -1,6 +1,6 @@
-function drawTable (tableID, dataSet, tableTitle) {
+function drawTable (tableID, dataSet, columnRender) {
     $('#' + tableID).DataTable({
         data: dataSet,
-        columns: tableTitle,
+        columns: columnRender,
     });
 }

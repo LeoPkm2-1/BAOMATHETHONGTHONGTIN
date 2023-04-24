@@ -4,9 +4,9 @@ const tempList = [
     ["Hoan Nhi C", "c1"]
 ]
 
-async function drawCanidate(canidateList, divToInsertID) {
+async function drawCandidate(canidateList, divToInsertID) {
     canidateList = tempList;
-    divToInsertID = "canidate";
+    //divToInsertID = "candidate";
     const fatherElement = document.getElementById(divToInsertID);
     let insertElement, radioElement, labelElement;
     canidateList.forEach(canidate => {

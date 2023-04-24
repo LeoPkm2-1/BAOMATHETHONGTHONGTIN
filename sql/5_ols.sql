@@ -1,4 +1,4 @@
-conn sys/123456 as sysdba
+conn sys/4GTuqhecnELH3qoI as sysdba
 -- -- -- nguoi dung trong ols
 -- quan ly nguoi dung trong chinh sach cua ols
 GRANT connect, create user, drop user,
@@ -114,7 +114,7 @@ grant elec_role to elec_giamsat_q5;
 grant elec_role_damsat to elec_giamsat_q5;
 
 
-conn lbacsys/123456;
+conn lbacsys/PyAV8uBsuHra1JcF;
 begin 
     SA_SYSDBA.create_policy(
         policy_name => 'access_election',
@@ -126,7 +126,7 @@ end;
 
 
 
-conn lbacsys/123456;
+conn lbacsys/PyAV8uBsuHra1JcF;
 GRANT access_election_dba to elec_sec_admin;
 
 -- Package dùng để tạo ra các thành phần của nhãn
@@ -140,7 +140,7 @@ GRANT execute ON sa_policy_admin TO elec_sec_admin;
 
 
 
-CONN lbacsys/123456;
+CONN lbacsys/PyAV8uBsuHra1JcF;
 GRANT access_election_dba to elec_user_manage;
 
 -- Package dùng để gán các label cho user
